@@ -6,7 +6,7 @@
     <title>Ingenium Flow : Conseil Stratégique en Transformation & Valeur</title>
     <meta name="description" content="Ingenium Flow est un cabinet de conseil spécialisé en architecture des flux de valeur, excellence organisationnelle et leadership stratégique, guidant les entreprises vers une performance optimale.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght%3700&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-primary: #0A1128; /* Dark Blue */
@@ -144,19 +144,19 @@
             transform-origin: bottom left;
         }
 
-        /* Mobile Menu specific styles (hidden by default) */
+        /* Mobile Menu specific styles:
+           - Hidden by default on all screens.
+           - Displayed as flex column ONLY when 'active' class is present.
+           - md:hidden ensures it's *never* shown on screens >= 768px (MD breakpoint)
+        */
         .mobile-menu {
-            display: none; /* Hidden by default on larger screens */
+            display: none; /* Hidden by default */
         }
-        /* Show on small screens */
-        @media (max-width: 767px) { /* Tailwind's 'md' breakpoint is 768px */
-            .mobile-menu {
-                display: block;
-            }
-            .mobile-menu.active {
-                display: flex;
-            }
+
+        .mobile-menu.active {
+            display: flex; /* Show as flex column when active */
         }
+
         /* Hide regular nav on small screens */
         @media (max-width: 767px) {
             .desktop-nav {
@@ -186,7 +186,7 @@
             </ul>
         </div>
 
-        <div id="mobile-menu" class="mobile-menu flex-col items-center mt-4 space-y-4 md:hidden header-bg w-full pb-4">
+        <div id="mobile-menu" class="hidden flex-col items-center mt-4 space-y-4 md:hidden header-bg w-full pb-4">
             <a href="#vision" class="nav-link text-lg block w-full text-center py-2 hover:bg-var(--color-secondary)">Notre Vision</a>
             <a href="#demarche" class="nav-link text-lg block w-full text-center py-2 hover:bg-var(--color-secondary)">Notre Démarche</a>
             <a href="#expertise" class="nav-link text-lg block w-full text-center py-2 hover:bg-var(--color-secondary)">Expertises</a>
@@ -505,13 +505,18 @@
             const mobileMenu = document.getElementById('mobile-menu');
 
             mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
+                // Toggle la classe 'hidden' de Tailwind.
+                // Lorsque 'hidden' est présente, l'élément est masqué.
+                // Lorsqu'elle est retirée, notre CSS '.mobile-menu.active' prend le relais.
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('active'); // Maintient la classe 'active' pour d'autres styles si nécessaire
             });
 
             // Fermer le menu si un lien est cliqué
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('active');
+                    mobileMenu.classList.add('hidden'); // Masquer le menu
+                    mobileMenu.classList.remove('active'); // Retirer la classe 'active'
                 });
             });
         });
