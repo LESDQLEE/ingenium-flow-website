@@ -1,525 +1,131 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingenium Flow : Conseil Stratégique en Transformation & Valeur</title>
-    <meta name="description" content="Ingenium Flow est un cabinet de conseil spécialisé en architecture des flux de valeur, excellence organisationnelle et leadership stratégique, guidant les entreprises vers une performance optimale.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght%3700&display=swap" rel="stylesheet">
+    <title>Ingenium Flow : Conseil en Transformation Organisationnelle, Lean-Agile, Leadership</title>
+    <meta name="description" content="Ingenium Flow accompagne les leaders et leurs équipes dans l'adoption de pratiques agiles à l'échelle pour optimiser la performance et créer une culture d'amélioration continue.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --color-primary: #0A1128; /* Dark Blue */
-            --color-secondary: #001F54; /* Medium Blue */
-            --color-accent: #034078;   /* Royal Blue */
-            --color-text: #333;
-            --color-light-bg: #F8F9FA; /* Off-White */
-            --color-border: #E0E0E0;
-            --color-highlight: #C5D8F0; /* Lighter Blue */
-            --color-orange-gold: #FFB347; /* Un orange doré doux pour le contraste */
+        /* Styles spécifiques à votre page d'accueil si nécessaire, ou globalement via votre fichier style.css */
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        /* Assurez-vous que ces couleurs correspondent à votre palette Ingenium Flow */
+        .text-blue-800 { color: #034078; } /* Par exemple */
+        .bg-blue-600 { background-color: #034078; } /* Par exemple */
+        .article-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--color-light-bg);
-            color: var(--color-text);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            color: var(--color-primary);
-        }
-
-        .header-bg {
-            background-color: var(--color-primary);
-            color: var(--color-light-bg);
-        }
-
-        .nav-link {
-            color: var(--color-light-bg);
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: var(--color-highlight);
-        }
-
-        .section-title {
-            color: var(--color-accent);
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .cta-button {
-            background-color: var(--color-accent);
-            color: white;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .cta-button:hover {
-            background-color: #02315E;
-            transform: translateY(-2px);
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-            border-left: 2px solid var(--color-highlight);
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: var(--color-accent);
-            border: 3px solid var(--color-light-bg);
-        }
-
-        .testimonial-card {
-            background-color: white;
-            border-top: 4px solid var(--color-accent);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            padding: 2rem;
-            border-radius: 0.5rem;
-        }
-        .testimonial-card p {
-            font-style: italic;
-            color: var(--color-text);
-        }
-        .testimonial-card .author {
-            font-weight: 600;
-            color: var(--color-primary);
-            margin-top: 1rem;
-        }
-        .testimonial-card .title {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .footer-bg {
-            background-color: var(--color-primary);
-            color: var(--color-light-bg);
-        }
-
-        /* Specific styles for icons/visual elements */
-        .icon-large {
-            font-size: 3rem;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-        }
-
-        /* Custom underline effect for links in text */
-        .text-link {
-            position: relative;
-            text-decoration: none;
-            color: var(--color-accent);
-        }
-        .text-link::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--color-accent);
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-        .text-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        /* Mobile Menu specific styles:
-           - Hidden by default on all screens.
-           - Displayed as flex column ONLY when 'active' class is present.
-           - md:hidden ensures it's *never* shown on screens >= 768px (MD breakpoint)
-        */
-        .mobile-menu {
-            display: none; /* Hidden by default */
-        }
-
-        .mobile-menu.active {
-            display: flex; /* Show as flex column when active */
-        }
-
-        /* Hide regular nav on small screens */
-        @media (max-width: 767px) {
-            .desktop-nav {
-                display: none;
-            }
+        .article-card img {
+            border-bottom: 3px solid #034078; /* Couleur d'accentuation */
         }
     </style>
 </head>
-<body class="antialiased">
-    <nav class="header-bg p-4 shadow-lg fixed w-full z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#accueil" class="text-2xl md:text-3xl font-bold nav-link tracking-wider">INGENIUM FLOW</a>
-
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-
-            <ul class="hidden md:flex space-x-4 lg:space-x-8 desktop-nav">
-                <li><a href="#vision" class="nav-link text-base lg:text-lg">Notre Vision</a></li>
-                <li><a href="#demarche" class="nav-link text-base lg:text-lg">Notre Démarche</a></li>
-                <li><a href="#expertise" class="nav-link text-base lg:text-lg">Expertises</a></li>
-                <li><a href="#impact" class="nav-link text-base lg:text-lg">Impacts</a></li>
-                <li><a href="#equipe" class="nav-link text-base lg:text-lg">Notre Équipe</a></li>
-                <li><a href="#contact" class="nav-link text-base lg:text-lg">Contact</a></li>
-            </ul>
-        </div>
-
-        <div id="mobile-menu" class="hidden flex-col items-center mt-4 space-y-4 md:hidden header-bg w-full pb-4">
-            <a href="#vision" class="nav-link text-lg block w-full text-center py-2 hover:bg-var(--color-secondary)">Notre Vision</a>
-            <a href="#demarche" class="nav-link text-lg block w-full text-center py-2 hover:bg-var(--color-secondary)">Notre Démarche</a>
-            <a href="#expertise" class="nav-link text-lg block w-full text-center py-2 hover:bg-var(--color-secondary)">Expertises</a>
-            <a href="#impact" class="nav-link text-lg block w-full text-center py-2 hover:bg-var(--color-secondary)">Impacts</a>
-            <a href="#equipe" class="nav-link text-lg block w-full text-center py-2 hover:bg-var(--color-secondary)">Notre Équipe</a>
-            <a href="#contact" class="nav-link text-lg block w-full text-center py-2 hover:bg-var(--color-secondary)">Contact</a>
-        </div>
-    </nav>
-
-    <section id="accueil" class="header-bg flex flex-col items-center justify-center min-h-screen text-center px-4 pt-24">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold mb-4 md:mb-6 leading-tight tracking-tight">
-            <span style="color: var(--color-orange-gold);">Au Cœur de la</span> <span class="text-white opacity-80">Transformation.</span><br>
-            <span style="color: var(--color-orange-gold);">Architectes de</span> <span class="text-white opacity-80">Votre Valeur.</span>
-        </h1>
-        <p class="text-lg sm:text-xl md:text-2xl lg:text-4xl font-semibold max-w-4xl mb-6 md:mb-8 opacity-90 leading-relaxed text-white">
-            Ingéniosité Stratégique, Votre Valeur Réinventée.
-        </p>
-        <p class="text-base sm:text-lg md:text-xl lg:text-3xl font-light max-w-4xl mb-8 md:mb-10 opacity-90 leading-relaxed">
-            Ingenium Flow est votre partenaire stratégique pour une transformation sans précédent. Nous orchestrons l'innovation et l'excellence pour propulser votre entreprise vers des sommets inégalés, en redéfinissant la valeur.
-        </p>
-        <a href="#contact" class="cta-button py-3 px-8 sm:py-4 sm:px-12 rounded-full text-base sm:text-lg md:text-xl font-semibold shadow-xl">
-            Engager la Conversation avec un Expert
-        </a>
-    </section>
-
-    <section id="vision" class="py-16 md:py-24 px-4 bg-white text-center">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-title mb-6">Notre Vision : La Valeur Redéfinie, l'Excellence Orchestrée.</h2>
-        <p class="text-base md:text-xl max-w-4xl mx-auto mb-10 md:mb-16 text-gray-700 leading-relaxed">
-            Dans un monde en constante réinvention, nous croyons que la véritable performance émerge d'une synergie parfaite entre une stratégie audacieuse, une structure résiliente et une culture inspirante. Nous forgeons l'avenir de votre organisation en libérant son potentiel intrinsèque, pour une croissance exponentielle et un impact durable.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto">
-            <div class="card p-6 md:p-8 rounded-lg text-left shadow-lg">
-                <span class="icon-large mb-4">🔗</span>
-                <h3 class="text-xl md:text-2xl font-semibold mb-3">Architecture de la Valeur</h3>
-                <p class="text-sm md:text-md text-gray-700">Nous concevons et optimisons vos chaînes de valeur de bout en bout, garantissant une création de valeur fluide et mesurable, et un retour sur expérience (ROX) maximisé.</p>
+<body>
+    <header>
+        <nav class="bg-blue-800 dark:bg-blue-900 shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="/" class="text-white text-2xl font-bold">Ingenium Flow</a>
+                        </div>
+                        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                            <a href="/" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Accueil</a>
+                            <a href="/services.html" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                            <a href="/articles.html" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Articles & Écrits</a>
+                            </div>
+                    </div>
+                    </div>
             </div>
-            <div class="card p-6 md:p-8 rounded-lg text-left shadow-lg">
-                <span class="icon-large mb-4">📈</span>
-                <h3 class="text-xl md:text-2xl font-semibold mb-3">Excellence Organisationnelle</h3>
-                <p class="text-sm md:text-md text-gray-700">Nous ancrons une culture d'amélioration continue et d'agilité, optimisant vos structures et processus pour une performance durable et une réactivité accrue face au changement.</p>
-            </div>
-            <div class="card p-6 md:p-8 rounded-lg text-left shadow-lg">
-                <span class="icon-large mb-4">💡</span>
-                <h3 class="text-xl md:text-2xl font-semibold mb-3">Orchestration de l'Intelligence Collective</h3>
-                <p class="text-sm md:text-md text-gray-700">Nous libérons le potentiel de vos équipes en favorisant une collaboration dynamique, transformant l'intelligence collective en un puissant levier d'innovation et de résolution de défis.</p>
-            </div>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <section id="demarche" class="py-16 md:py-24 px-4 bg-var(--color-light-bg) shadow-inner">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-title mb-6">Notre Démarche : La Puissance de la CoreTechture</h2>
-        <p class="text-base md:text-xl text-center max-w-4xl mx-auto mb-10 md:mb-16 text-gray-700 leading-relaxed">
-            Notre démarche signature, la <strong>CoreTechture</strong>, est l'ingénierie des transformations durables. Elle agit au cœur même de votre organisation, fusionnant l'<strong>ambidextrie organisationnelle</strong> — l'art stratégique d'équilibrer l'optimisation des acquis et l'exploration des innovations — avec la <strong>symétrie des attentions</strong>, pour un succès où chaque partie prenante (clients, employés, partenaires) est valorisée et engagée.
-        </p>
+    <main>
+        <section class="bg-blue-700 text-white py-20 text-center">
+            <h1 class="text-5xl font-bold mb-4">Ingenium Flow</h1>
+            <p class="text-xl">Accompagnement en Transformation Organisationnelle, Lean-Agile et Leadership</p>
+        </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 max-w-7xl mx-auto">
-            <div class="card p-5 md:p-6 text-center shadow-md">
-                <div class="icon-large">🔍</div>
-                <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">1. Diagnostic du Core</h3>
-                <p class="text-sm md:text-md text-gray-700">Une analyse approfondie de vos fondations stratégiques et opérationnelles pour identifier les leviers de valeur et les opportunités de croissance.</p>
-            </div>
-            <div class="card p-5 md:p-6 text-center shadow-md">
-                <div class="icon-large">📐</div>
-                <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">2. Co-construction de la Techture Cible</h3>
-                <p class="text-sm md:text-md text-gray-700">Conception collaborative des architectures cibles pour aligner vos structures et processus sur vos objectifs stratégiques, en assurant une symétrie des attentions entre toutes les parties prenantes.</p>
-            </div>
-            <div class="card p-5 md:p-6 text-center shadow-md">
-                <div class="icon-large">🚀</div>
-                <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">3. Déploiement Itératif de la Techture</h3>
-                <p class="text-sm md:text-md text-gray-700">Mise en œuvre agile et adaptative de votre nouvelle architecture. Nous accompagnons vos équipes et leaders pour ancrer le changement, avec un pilotage constant par la valeur et l'atteinte de résultats mesurables.</p>
-            </div>
-            <div class="card p-5 md:p-6 text-center shadow-md">
-                <div class="icon-large">✨</div>
-                <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">4. Pérennisation du Core</h3>
-                <p class="text-sm md:text-md text-gray-700">Transfert de compétences et renforcement de vos capacités internes pour une autonomie durable. Votre organisation maintient son excellence et sa résilience, prête à évoluer en permanence.</p>
-            </div>
-        </div>
-        <div class="text-center mt-12 md:mt-20">
-            <a href="#contact" class="cta-button py-3 px-8 sm:py-4 sm:px-10 rounded-full text-base sm:text-lg font-semibold shadow-md">
-                Discuter de Votre Défi CoreTechture
-            </a>
-        </div>
-    </section>
+        <section id="articles-ecrits" class="py-16 bg-white dark:bg-gray-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-center text-gray-900 dark:text-white mb-12">
+                    Nos Articles & Écrits
+                </h2>
 
-    <section id="expertise" class="py-16 md:py-24 px-4 bg-white">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-title mb-6">Nos Expertises Clés : L'Art de la Maîtrise</h2>
-        <p class="text-base md:text-xl max-w-4xl mx-auto mb-10 md:mb-16 text-gray-700 text-center leading-relaxed">
-            Notre cabinet incarne une expertise pointue, fruit d'années d'expérience et d'une quête incessante d'innovation. Nous activons les leviers stratégiques les plus puissants pour transformer vos ambitions en succès concrets et mesurables.
-        </p>
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <div class="p-5 md:p-6 bg-var(--color-light-bg) rounded-lg shadow-sm flex items-start space-x-3 md:space-x-4">
-                    <span class="text-2xl md:text-3xl text-var(--color-accent)">✓</span>
-                    <div>
-                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">Stratégie & Leadership Agile</h3>
-                        <p class="text-sm md:text-md text-gray-700">Guider vos dirigeants dans l'orchestration d'une transformation agile à l'échelle, de la vision audacieuse à l'exécution maîtrisée, en s'appuyant sur des modèles éprouvés de **Leadership et de Change Management**.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="article-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <a href="/blog/fable-ornithorynque-leadership-collectif.html" class="block">
+                            <img class="w-full h-48 object-cover" src="/assets/images/fable-ornithorynque-banniere.jpg" alt="Illustration de l'ornithorynque et du sous-marin">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                                    L'Ornithorynque qui dirigea un sous-marin
+                                </h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                                    Une fable moderne sur le leadership collectif, la vulnérabilité partagée et l'équilibre fragile entre savoir, pouvoir et sagesse.
+                                </p>
+                                <span class="inline-block bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 text-xs px-3 py-1 rounded-full font-semibold">
+                                    Fable Moderne
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="article-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <a href="/blog/votre-deuxieme-article.html" class="block">
+                            <img class="w-full h-48 object-cover" src="/assets/images/article-innovation-banniere.jpg" alt="Illustration de l'article 2">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                                    Titre de Votre Deuxième Article
+                                </h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                                    Une brève description de votre deuxième article, pour inciter à la lecture.
+                                </p>
+                                <span class="inline-block bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-100 text-xs px-3 py-1 rounded-full font-semibold">
+                                    Innovation
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="article-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <a href="/blog/votre-troisieme-article.html" class="block">
+                            <img class="w-full h-48 object-cover" src="/assets/images/article-strategie-banniere.jpg" alt="Illustration de l'article 3">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                                    Titre de Votre Troisième Article
+                                </h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                                    Une brève description de votre troisième article, pour inciter à la lecture.
+                                </p>
+                                <span class="inline-block bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-100 text-xs px-3 py-1 rounded-full font-semibold">
+                                    Stratégie
+                                </span>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="p-5 md:p-6 bg-var(--color-light-bg) rounded-lg shadow-sm flex items-start space-x-3 md:space-x-4">
-                    <span class="text-2xl md:text-3xl text-var(--color-accent)">✓</span>
-                    <div>
-                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">Value Stream Management (VSM)</h3>
-                        <p class="text-sm md:text-md text-gray-700">Révolutionner vos flux de livraison de valeur pour une rapidité et une prévisibilité sans précédent, maximisant ainsi l'impact commercial.</p>
-                    </div>
-                </div>
-                <div class="p-5 md:p-6 bg-var(--color-light-bg) rounded-lg shadow-sm flex items-start space-x-3 md:space-x-4">
-                    <span class="text-2xl md:text-3xl text-var(--color-accent)">✓</span>
-                    <div>
-                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">Coaching Exécutif & d'Équipes</h3>
-                        <p class="text-sm md:text-md text-gray-700">Éveiller le potentiel de leadership et insuffler l'autonomie au cœur de vos équipes, par un accompagnement expert dans l'adoption des **pratiques agiles et des frameworks à l'échelle (SAFe, Scrum, Kanban)**, pour une performance collective sublimée et une culture d'amélioration continue.</p>
-                    </div>
-                </div>
-                <div class="p-5 md:p-6 bg-var(--color-light-bg) rounded-lg shadow-sm flex items-start space-x-3 md:space-x-4">
-                    <span class="text-2xl md:text-3xl text-var(--color-accent)">✓</span>
-                    <div>
-                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">Performance Opérationnelle (Lean)</h3>
-                        <p class="text-sm md:text-md text-gray-700">Infuser les principes Lean pour éradiquer les inefficiences et démultiplier l'efficience, sculptant ainsi une organisation plus agile et réactive.</p>
-                    </div>
-                </div>
-                <div class="p-5 md:p-6 bg-var(--color-light-bg) rounded-lg shadow-sm flex items-start space-x-3 md:space-x-4">
-                    <span class="text-2xl md:text-3xl text-var(--color-accent)">✓</span>
-                    <div>
-                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">Mesure de la Valeur (KPIs & OKRs)</h3>
-                        <p class="text-sm md:text-md text-gray-700">Implémenter des métriques intelligentes pour un pilotage éclairé de la valeur et une atteinte des objectifs. Nous vous aidons à passer du simple ROI à une mesure approfondie du Retour sur Expérience (ROX), pour un pilotage par la valeur.</p>
-                    </div>
-                </div>
-                 <div class="p-5 md:p-6 bg-var(--color-light-bg) rounded-lg shadow-sm flex items-start space-x-3 md:space-x-4">
-                    <span class="text-2xl md:text-3xl text-var(--color-accent)">✓</span>
-                    <div>
-                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">Développement Humain & Culturel</h3>
-                        <p class="text-sm md:text-md text-gray-700">Cultiver une culture d'engagement profond, d'apprentissage agile et de résilience inébranlable, pour une organisation prête à chaque défi.</p>
-                    </div>
+
+                <div class="text-center mt-12">
+                    <a href="/articles.html" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors duration-200">
+                        Voir tous nos articles
+                        <svg class="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        </main>
 
-    <section id="impact" class="py-16 md:py-24 px-4 bg-var(--color-light-bg) shadow-inner">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-title mb-6">Notre Impact : Les Histoires de Succès que Nous Bâtissons</h2>
-        <p class="text-base md:text-xl text-center max-w-4xl mx-auto mb-10 md:mb-16 text-gray-700 leading-relaxed">
-            Ingenium Flow s'engage comme catalyseur de transformations majeures auprès d'organisations d'envergure internationale. Chaque partenariat est une opportunité de créer une valeur distinctive et durable, illustrée par des réalisations concrètes et mesurables.
-        </p>
-
-        <div class="max-w-4xl mx-auto">
-            <div class="timeline-item">
-                <h3 class="text-xl md:text-2xl font-semibold text-var(--color-accent) mb-1">Révolution de la Valeur chez un Géant des Télécommunications</h3>
-                <p class="text-xs md:text-sm font-medium text-gray-600 mb-2">Engagement continu : plus de 3 ans</p>
-                <p class="text-sm md:text-md text-gray-700">Pilotage de la conception et du déploiement d'un Bureau de Gestion de la Valeur (VMO) innovant, structurant les indicateurs clés de performance (KPI) et les objectifs et résultats clés (OKR). Une transformation qui a réaligné l'organisation sur des objectifs stratégiques et optimisé la création de valeur.</p>
-            </div>
-            <div class="timeline-item">
-                <h3 class="text-xl md:text-2xl font-semibold text-var(--color-accent) mb-1">Accélération Stratégique pour une Institution Publique de Premier Plan</h3>
-                <p class="text-xs md:text-sm font-medium text-gray-600 mb-2">Collaboration : plus d'un an</p>
-                <p class="text-sm md:text-md text-gray-700">Contribution décisive à l'établissement d'un centre d'excellence organisationnel et au redressement stratégique d'une transformation d'envergure. Notre action a prouvé notre capacité à orchestrer des changements complexes et à dynamiser l'intelligence collective au sein d'une structure publique majeure.</p>
-            </div>
-            <div class="timeline-item">
-                <h3 class="text-xl md:text-2xl font-semibold text-var(--color-accent) mb-1">Optimisation des Flux de livraison chez un Leader Technologique Global</h3>
-                <p class="text-xs md:text-sm font-medium text-gray-600 mb-2">Partenariat : plus de 16 mois</p>
-                <p class="text-sm md:text-md text-gray-700">Conduite de transformations agiles à l'échelle, incluant le coaching de facilitateurs et l'implémentation des meilleures pratiques. Résultat : une fluidité accrue des flux de livraison et une synergie inter-équipes renforcée au sein d'une entreprise technologique de pointe.</p>
-            </div>
-            <div class="timeline-item">
-                <h3 class="text-xl md:text-2xl font-semibold text-var(--color-accent) mb-1">Catalyse d'un Projet Stratégique Complexe : Un Modèle de Gouvernance</h3>
-                <p class="text-xs md:text-sm font-medium text-gray-600 mb-2">Durée de l'engagement : plusieurs mois</p>
-                <p class="text-sm md:text-md text-gray-700">Participation stratégique au lancement d'une initiative majeure, avec un rôle essentiel dans la formation au leadership transformationnel et la réinvention des postures managériales. Nous avons orchestré l'intelligence collective à travers de nouveaux modèles de travail, dans un contexte d'évolution réglementaire exigeant.</p>
-            </div>
-            </div>
-
-        <div class="text-center mt-12 md:mt-20">
-            <a href="#contact" class="cta-button py-3 px-8 sm:py-4 sm:px-10 rounded-full text-base sm:text-lg font-semibold shadow-md">
-                Découvrir Nos Études de Cas Approfondies (sur demande)
-            </a>
-        </div>
-    </section>
-
-    <section id="temoignages" class="py-16 md:py-24 px-4 bg-white">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-title mb-6">Voix de Nos Partenaires : La Preuve de Notre Impact</h2>
-        <p class="text-base md:text-xl text-center max-w-4xl mx-auto mb-10 md:mb-16 text-gray-700 leading-relaxed">
-            Chaque témoignage est une validation de notre engagement et de la profondeur de notre impact. Anonymisés par respect de la confidentialité, ces récits témoignent des succès que nous avons construits ensemble et des transformations concrètes que nous avons initiées.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
-            <div class="testimonial-card p-5 md:p-8">
-                <p class="text-base md:text-lg mb-4">"L'expertise et la capacité d'analyse d'Ingenium Flow sont exceptionnelles. Ce sont des partenaires précieux qui identifient les vrais besoins au-delà des solutions apparentes."</p>
-                <div class="author text-sm md:text-base">- Un Responsable de Transformation</div>
-                <div class="title text-xs md:text-sm">Dirigeant d'une grande entreprise technologique</div>
-            </div>
-            <div class="testimonial-card p-5 md:p-8">
-                <p class="text-base md:text-lg mb-4">"Nous avons eu le plaisir de travailler avec Ingenium Flow sur une transformation majeure. Leur contribution fut un atout majeur, tant au niveau tactique que stratégique. Ils démontrent une maîtrise exceptionnelle dans le redressement d'initiatives complexes."</p>
-                <div class="author text-sm md:text-base">- Un Coach Senior Confirmé</div>
-                <div class="title text-xs md:text-sm">Expert en Accompagnement Stratégique dans une institution financière majeure</div>
-            </div>
-            <div class="testimonial-card p-5 md:p-8">
-                <p class="text-base md:text-lg mb-4">"Ingenium Flow se distingue par son professionnalisme et son savoir-faire. Une grande capacité d'écoute et d'empathie, doublée d'une communication d'une clarté remarquable. Un partenaire qui guide avec honnêteté et équité."</p>
-                <div class="author text-sm md:text-base">- Un Leader Organisationnel</div>
-                <div class="title text-xs md:text-sm">Directeur de Service au sein d'une organisation du secteur public</div>
-            </div>
-            <div class="testimonial-card p-5 md:p-8">
-                <p class="text-base md:text-lg mb-4">"C'était un privilège de collaborer avec Ingenium Flow. Leur expertise et leur dévouement au travail de qualité sont exemplaires. Je les recommande fortement pour relever les défis de l'agilité à grande échelle."</p>
-                <div class="author text-sm md:text-base">- Un Gestionnaire de Projet Sénior</div>
-                <div class="title text-xs md:text-sm">Professionnel expérimenté en gestion de projets complexes pour une société de services</div>
-            </div>
-            <div class="testimonial-card p-5 md:p-8">
-                <p class="text-base md:text-lg mb-4">"Ingenium Flow a une compréhension profonde des dynamiques agiles, même dans des environnements très complexes. Leur accompagnement a été crucial pour le succès de notre initiative de transformation."</p>
-                <div class="author text-sm md:text-base">- Un Directeur Général Adjoint</div>
-                <div class="title text-xs md:text-sm">Haut dirigeant d'une grande organisation</div>
-            </div>
-            <div class="testimonial-card p-5 md:p-8">
-                <p class="text-base md:text-lg mb-4">"Le soutien d'Ingenium Flow, par un accompagnement sur mesure, nous a permis d'intégrer l'agilité à notre rythme. Leur maîtrise et leur disponibilité ont assuré la livraison d'un projet complexe dans les délais. Une collaboration que je recommande sans hésiter."</p>
-                <div class="author text-sm md:text-base">- Un Conseiller Stratégique Indépendant</div>
-                <div class="title text-xs md:text-sm">Spécialiste en Systèmes d'Information pour un grand groupe</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="equipe" class="py-16 md:py-24 px-4 bg-var(--color-light-bg) shadow-inner">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-title mb-6">Notre Équipe : Les Architectes de Votre Succès</h2>
-        <p class="text-base md:text-xl text-center max-w-4xl mx-auto mb-10 md:mb-16 text-gray-700 leading-relaxed">
-            Nos consultants sont des leaders d'opinion et des praticiens d'élite, unis par une ambition commune : catalyser l'excellence et l'innovation au cœur des organisations. Chaque membre d'Ingenium Flow est un acteur clé de votre transformation, transformant les défis les plus complexes en opportunités concrètes.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-7xl mx-auto">
-            <div class="card p-6 md:p-8 text-center flex flex-col items-center">
-                <img src="https://i.imgur.com/mptLO4s.jpeg" alt="Photo du Fondateur Elyes Dekhili" class="rounded-full shadow-lg mb-4 md:mb-6 border-4 border-var(--color-accent)" style="width: 160px; height: 160px;">
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-1">Elyes Dekhili</h3>
-                <p class="text-base md:text-lg font-medium text-var(--color-accent) mb-3">Fondateur & Architecte Principal</p>
-                <p class="text-sm md:text-md text-gray-700 mb-4">
-                    Fort de plus de deux décennies d'expérience en transformation, Elyes est le catalyseur des stratégies Lean-Agile d'Ingenium Flow. Son leadership et son expertise en architecture des flux de valeur sont le pilier de notre approche.
-                </p>
-                <ul class="list-disc list-inside text-xs md:text-sm text-gray-600 text-left self-start mb-4">
-                    <li>Stratège en transformation à l'échelle</li>
-                    <li>Expert en Value Stream Management</li>
-                    <li>Coach de dirigeants et d'équipes</li>
-                </ul>
-                <a href="https://www.linkedin.com/in/elyes-dekhili" target="_blank" class="text-link text-sm md:text-md font-medium mt-auto">
-                    Profil LinkedIn
-                </a>
-            </div>
-
-            <div class="card p-6 md:p-8 text-center flex flex-col items-center">
-                <img src="https://i.imgur.com/4iKvgtj.png" alt="Photo de Hachem GAAS" class="rounded-full shadow-lg mb-4 md:mb-6 border-4 border-var(--color-accent)" style="width: 160px; height: 160px;">
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-1">Hachem GAAS</h3>
-                <p class="text-base md:text-lg font-medium text-var(--color-accent) mb-3">Co-fondateur & Conseiller Principal</p>
-                <p class="text-sm md:text-md text-gray-700 mb-4">
-                    Passionné par l'agilité et la transformation organisationnelle, Hachem accompagne les leaders et leurs équipes dans l'adoption de pratiques agiles à l'échelle. Son objectif est de favoriser la collaboration, d'améliorer la performance et de créer une culture d'amélioration continue.
-                </p>
-                <ul class="list-disc list-inside text-xs md:text-sm text-gray-600 text-left self-start mb-4">
-                    <li>Conseiller en Transformation Organisationnelle</li>
-                    <li>Coach Lean-Agile (Scrum, Kanban, SAFe)</li>
-                    <li>Leadership & Change Management</li>
-                </ul>
-                <a href="https://www.linkedin.com/in/hmgaas" target="_blank" class="text-link text-sm md:text-md font-medium mt-auto">
-                    Profil LinkedIn
-                </a>
-            </div>
-
-            <div class="card p-6 md:p-8 text-center flex flex-col items-center">
-                <img src="https://via.placeholder.com/180/0A1128/FFFFFF?text=Expert+2" alt="Photo de l'Expert 2" class="rounded-full shadow-lg mb-4 md:mb-6 border-4 border-var(--color-highlight)" style="width: 160px; height: 160px;">
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-1">Intégrez Notre Collectif Stratégique</h3>
-                <p class="text-base md:text-lg font-medium text-var(--color-accent) mb-3">Associé(e) / Spécialiste Principal(e)</p>
-                <p class="text-sm md:text-md text-gray-700 mb-4">
-                    Si vous êtes un(e) professionnel(le) aguerri(e), aspirant à contribuer à des projets de transformation ambitieux et à façonner l'avenir des organisations, Ingenium Flow vous offre un environnement stimulant pour démultiplier votre impact.
-                </p>
-                <ul class="list-disc list-inside text-xs md:text-sm text-gray-600 text-left self-start mb-4">
-                    <li>Maîtrise des méthodologies d'impact avérées</li>
-                    <li>Esprit collaboratif et innovant d'exception</li>
-                    <li>Vaste expérience sectorielle et leadership éclairé</li>
-                </ul>
-                <a href="#contact" class="text-link text-sm md:text-md font-medium mt-auto">
-                    Soumettre Votre Candidature Spontanée
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-16 md:py-24 px-4 footer-bg text-center">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-title text-white mb-6">Votre Avenir Commence Ici : Contactez-Nous</h2>
-        <p class="text-base md:text-xl text-white max-w-3xl mx-auto mb-10 md:mb-12 opacity-90 leading-relaxed">
-            La transformation est une conversation. Contactez Ingenium Flow pour une consultation stratégique exclusive. Ensemble, nous définirons la voie la plus pertinente pour vos ambitions et construirons les solutions qui propulseront votre succès.
-        </p>
-        <div class="max-w-md mx-auto bg-white p-8 md:p-10 rounded-lg shadow-xl text-gray-800">
-            <form class="space-y-4 md:space-y-6">
-                <div>
-                    <input type="text" id="name" name="name" placeholder="Votre Nom Complet" class="w-full p-3 md:p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-var(--color-accent) text-sm md:text-base" required>
+    <footer>
+        <div class="bg-gray-900 text-white py-8">
+            <div class="max-w-6xl mx-auto text-center">
+                <p>&copy; 2024 Ingenium Flow. Tous droits réservés.</p>
                 </div>
-                <div>
-                    <input type="email" id="email" name="email" placeholder="Votre Email Professionnel" class="w-full p-3 md:p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-var(--color-accent) text-sm md:text-base" required>
-                </div>
-                <div>
-                    <input type="text" id="company" name="company" placeholder="Nom de Votre Organisation" class="w-full p-3 md:p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-var(--color-accent) text-sm md:text-base">
-                </div>
-                <div>
-                    <textarea id="message" name="message" rows="5" placeholder="Décrivez succinctement votre besoin ou votre défi stratégique..." class="w-full p-3 md:p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-var(--color-accent) text-sm md:text-base" required></textarea>
-                </div>
-                <button type="submit" class="cta-button w-full py-3 px-6 rounded-md text-base md:text-xl font-semibold">Envoyer Votre Demande</button>
-            </form>
-            <p class="text-center text-xs md:text-sm text-gray-600 mt-6 md:mt-8">
-                Ou contactez-nous directement : <br>
-                <a href="mailto:contact@ingeniumflow.com" class="text-link font-medium">contact@ingeniumflow.com</a> | <a href="tel:+1-XXX-XXX-XXXX" class="text-link font-medium">+1 (XXX) XXX-XXXX</a>
-            </p>
-        </div>
-    </section>
-
-    <footer class="bg-var(--color-primary) text-white py-6 md:py-8 text-center text-xs md:text-sm opacity-90">
-        <div class="container mx-auto px-4">
-            <p>&copy; 2025 Ingenium Flow. Tous droits réservés.</p>
-            <p class="mt-1 md:mt-2">L'Architecture de la Valeur. L'Excellence Orchestrée.</p>
-            <div class="flex justify-center space-x-4 md:space-x-6 mt-3 md:mt-4">
-                <a href="https://www.linkedin.com/company/ingenium-flow" target="_blank" class="hover:text-var(--color-highlight) text-link">LinkedIn</a>
-                <a href="#" class="hover:text-var(--color-highlight) text-link">Politique de Confidentialité</a>
-                <a href="#" class="hover:text-var(--color-highlight) text-link">Mentions Légales</a>
-            </div>
         </div>
     </footer>
-
-    <script>
-        // JavaScript pour gérer l'ouverture/fermeture du menu mobile
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            mobileMenuButton.addEventListener('click', () => {
-                // Toggle la classe 'hidden' de Tailwind.
-                // Lorsque 'hidden' est présente, l'élément est masqué.
-                // Lorsqu'elle est retirée, notre CSS '.mobile-menu.active' prend le relais.
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('active'); // Maintient la classe 'active' pour d'autres styles si nécessaire
-            });
-
-            // Fermer le menu si un lien est cliqué
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden'); // Masquer le menu
-                    mobileMenu.classList.remove('active'); // Retirer la classe 'active'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
