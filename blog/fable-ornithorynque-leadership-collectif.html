@@ -3,89 +3,775 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Fable de l'Ornithorynque - Ingenium Flow</title>
+    <title>L'Ornithorynque qui dirigea un sous-marin : Fable sur le Leadership Collectif - Ingenium Flow</title>
+    <meta name="description" content="Découvrez une fable moderne sur le leadership collectif, la vulnérabilité partagée et l'équilibre entre savoir, pouvoir et sagesse. Une lecture inspirante par Ingenium Flow.">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="icon" href="/ingenium-flow-website/assets/images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Styles personnalisés pour la lecture et l'UX */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.7; /* Légèrement plus d'interligne */
+            background-color: #f8f9fa; /* Couleur de fond légère */
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: #0A1128; /* Couleur primaire d'Ingenium Flow */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+        h1 { font-size: 2.8rem; text-align: center; color: #034078; } /* Royal Blue */
+        h2 { font-size: 2.2rem; border-bottom: 2px solid #034078; padding-bottom: 0.3em; margin-top: 2.5em; }
+        h3 { font-size: 1.8rem; color: #001F54; } /* Medium Blue */
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+        .container-fable {
+            max-width: 800px; /* Largeur optimale pour la lecture */
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+        .prelude, .morale-box {
+            background-color: #e0f2f7; /* Couleur douce pour encadrés */
+            border-left: 5px solid #034078;
+            padding: 1.5em;
+            margin-bottom: 2em;
+            font-style: italic;
+            border-radius: 4px;
+        }
+        .section-title {
+            text-align: center;
+            font-weight: 600;
+            color: #034078;
+            margin-top: 3em;
+            margin-bottom: 1.5em;
+        }
+        .quote-block {
+            font-style: italic;
+            background-color: #f0f8ff;
+            border-left: 3px solid #034078;
+            padding: 1em 1.5em;
+            margin: 1.5em 0;
+            quotes: "“" "”" "‘" "’"; /* Pour les guillemets stylisés si utilisés */
+        }
+        .quote-block p::before {
+            content: open-quote;
+            font-size: 2em;
+            line-height: 0.1em;
+            vertical-align: -0.4em;
+            margin-right: 0.15em;
+            color: #034078;
+        }
+        .quote-block p::after {
+            content: close-quote;
+            font-size: 2em;
+            line-height: 0.1em;
+            vertical-align: -0.4em;
+            margin-left: 0.15em;
+            color: #034078;
+        }
+
+        .author-note {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+        .table-of-contents {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .table-of-contents h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
+            font-size: 1.4rem;
+            color: #0A1128;
+        }
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+        .table-of-contents a {
+            color: #034078;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.5rem; }
+            .container-fable {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
-
-    <nav class="bg-gray-800 p-4 mt-0 w-full">
-        <div class="container mx-auto flex items-center justify-between flex-wrap">
-            <div class="flex items-center flex-shrink-0 text-white mr-6">
-                <a class="text-white no-underline hover:text-white hover:no-underline" href="/ingenium-flow-website/index.html">
-                    <span class="text-2xl pl-2"><i class="em em-grinning"></i> Ingenium Flow</span>
-                </a>
+<body>
+    <header>
+        <nav class="bg-blue-800 dark:bg-blue-900 shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="/ingenium-flow-website/" class="text-white text-2xl font-bold">Ingenium Flow</a>
+                        </div>
+                        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                            <a href="/ingenium-flow-website/" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Accueil</a>
+                            <a href="/ingenium-flow-website/services.html" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                            <a href="/ingenium-flow-website/articles.html" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Articles & Écrits</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="block lg:hidden">
-                <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
-                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v15z"/></svg>
-                </button>
+        </nav>
+    </header>
+
+    <div class="container-fable mt-8 mb-8">
+
+        <header class="text-center mb-10">
+            <h1>L'ORNITHORYNQUE QUI DIRIGEA UN SOUS-MARIN</h1>
+            <p class="text-xl italic text-gray-600">Murmures d'une entente en clair-obscur</p>
+            <p class="text-lg font-semibold text-gray-700 mt-4">Une Fable Moderne sur le Leadership Collectif</p>
+        </header>
+
+        <div class="author-note">
+            <p>par L'équipe d'Ingenium Flow</p>
+            <p class="text-sm">(Livre I - Les Gardiens du Lagon)</p>
+        </div>
+
+        <div class="table-of-contents">
+            <h3>Table des Matières</h3>
+            <ul>
+                <li><a href="#preambule">Préambule</a></li>
+                <li><a href="#appel-profondeurs">L'Appel des Profondeurs</a></li>
+                <li><a href="#ballet-complicites">Un Ballet d'Invisibles Complicités</a></li>
+                <li><a href="#premiere-plongee">La Première Plongée</a></li>
+                <li><a href="#detroit-epreuves">Le Détroit des Épreuves</a></li>
+                <li><a href="#sanctuaire-submerge">Le Sanctuaire Submergé</a></li>
+                <li><a href="#retour-perilleux">Le Retour Périlleux</a></li>
+                <li><a href="#renaissance-lagon">La Renaissance du Lagon</a></li>
+            </ul>
+        </div>
+
+        <section id="preambule" class="mb-8">
+            <h2>Préambule</h2>
+            <div class="prelude">
+                <p>Avant que l'aube de notre histoire éclaire ces pages,</p>
+                <p>Prêtez l'oreille au lagon tel qu'il fut jadis,</p>
+                <p>Quand ses eaux cristallines, libres de tout ombrage,</p>
+                <p>Abritaient mille vies en parfait équilibre.</p>
+                <br>
+                <p>Les Anciens, êtres sages aux formes oubliées,</p>
+                <p>Mi-humains, mi-aquatiques, nés d'un temps révolu,</p>
+                <p>Veillaient sur cet écrin de nature parfaite.</p>
+                <p>Leur science et leur art, à la vie alliés,</p>
+                <p>Préservaient l'harmonie en ce monde de fête.</p>
+                <p>Venus des étoiles en un âge lointain,</p>
+                <p>Ces êtres lumineux à la peau irisée</p>
+                <p>Avaient choisi le lagon comme jardin</p>
+                <p>Où cultiver la vie en sagesse avisée.</p>
+                <br>
+                <p>Mais vint le jour funeste où les Anciens partirent,</p>
+                <p>La Terre n'étant plus le foyer de leur race.</p>
+                <p>Emportant leurs secrets vers des cieux inconnus,</p>
+                <p>Laissant derrière eux un cristal, comme pour dire</p>
+                <p>Que l'espoir renaîtrait quand le temps serait venu.</p>
+                <p>Ce cristal souverain, fragment d'astre lointain,</p>
+                <p>Contenait en son cœur la force primordiale</p>
+                <p>Qui liait jadis les êtres en un même dessein,</p>
+                <p>Avant que l'égoïsme n'obscurcît leur morale.</p>
+                <br>
+                <p>Au fil des ans passés, le lagon s'obscurcit,</p>
+                <p>Les eaux se troublèrent, les plantes se fanèrent.</p>
+                <p>Les chants jadis joyeux se firent murmures las,</p>
+                <p>Les êtres divisés, chacun dans son récit,</p>
+                <p>Oublièrent peu à peu ce qu'ensemble ils créèrent,</p>
+                <p>Oubliant même le rire et les jeux de jadis.</p>
+                <br>
+                <p>Voici donc le récit d'un être peu commun,</p>
+                <p>Qui dans sa différence trouva force et sagesse.</p>
+                <p>Non pour briller lui seul, mais pour montrer à chacun</p>
+                <p>Que l'union des talents est la vraie forteresse.</p>
             </div>
-            <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
-                <ul class="list-reset lg:flex justify-end flex-1 items-center">
-                    <li class="mr-3">
-                        <a class="inline-block py-2 px-4 text-white no-underline" href="/ingenium-flow-website/index.html">Accueil</a>
-                    </li>
-                    <li class="mr-3">
-                        <a class="inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="/ingenium-flow-website/services.html">Services</a>
-                    </li>
-                    <li class="mr-3">
-                        <a class="inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="/ingenium-flow-website/articles.html">Articles & Écrits</a>
-                    </li>
-                    <li class="mr-3">
-                        <a class="inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="/ingenium-flow-website/a-propos.html">À Propos</a>
-                    </li>
-                    <li class="mr-3">
-                        <a class="inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="/ingenium-flow-website/contact.html">Contact</a>
-                    </li>
-                </ul>
+        </section>
+
+        <section id="appel-profondeurs" class="mb-8">
+            <h2>L'Appel des Profondeurs</h2>
+            <p>Au sein d'un lagon d'émeraude enchanteur,</p>
+            <p>Vivait Arnay, <i>ornithorynque rêveur</i>.</p>
+            <p>Tandis que ses frères fouillaient la vase obscure,</p>
+            <p>Lui contemplait l'horizon, épris d'aventure.</p>
+            <br>
+            <p>Orphelin dès l'éclosion, élevé entre deux mondes,</p>
+            <p>Par une tortue sage et un héron bienveillant,</p>
+            <p>Arnay grandit nourri d'histoires profondes,</p>
+            <p>D'anciennes légendes et de contes brillants.</p>
+            <p>Ce curieux animal au bec de canard fier,</p>
+            <p>Portait en son cœur vif des songes singuliers.</p>
+            <p>Au chant lointain des vagues, plus doux que le miel,</p>
+            <p>Son âme s'éveillait à des appels du ciel.</p>
+            <br>
+            <p>Un murmure étrange, une voix des abysses,</p>
+            <p>L'appelait à chercher au-delà des caprices</p>
+            <p>Des flots où barbotaient les bêtes du lagon,</p>
+            <p>Pour découvrir un sens à ce profond jargon.</p>
+            <p>Quand d'autres ornithorynques cherchaient leur pitance,</p>
+            <p>Notre héros scrutait l'horizon en silence,</p>
+            <p>Épris d'un rêve grand, presque philosophique,</p>
+            <p>Qui transcendait les bornes de sa vie aquatique.</p>
+            <p>Ce n'était point l'orgueil qui motivait sa quête,</p>
+            <p>Ni l'envie de briller parmi ses semblables,</p>
+            <p>Mais la soif de comprendre ce qui, dans sa tête,</p>
+            <p>Résonnait comme un chant à la fois doux et fable.</p>
+            <br>
+            <p>Sur la berge souvent, en cercles il traçait</p>
+            <p>Des spirales dans l'onde où son cœur se fixait,</p>
+            <p>Non par simple désir de braver les courants,</p>
+            <p>Mais pour saisir l'essence au cœur des océans.</p>
+            <p>Un soir que la lune brillait d'un feu d'argent,</p>
+            <p>Il chercha le conseil de Bahar, <i>sage ancien</i>,</p>
+            <p>Un calmar centenaire aux tentacules d'or,</p>
+            <p>Dont la mémoire gardait des océans l'essor.</p>
+            <p>Bahar, dernier disciple des grands céphalopodes</p>
+            <p>Qui jadis conversaient avec les Anciens mêmes,</p>
+            <p>Portait en ses cellules un savoir aux codes</p>
+            <p>Que seuls pouvaient percer les êtres qui s'aiment.</p>
+            <br>
+            <div class="quote-block">
+                <p>« Ô maître, dit Arnay, cette voix qui m'appelle,</p>
+                <p>Plus forte chaque jour, plus claire, plus belle,</p>
+                <p>Comment puis-je atteindre ce qui m'attire tant ?</p>
+                <p>Comment sonder l'abîme où mon cœur se suspend ? »</p>
             </div>
-        </div>
-    </nav>
+            <br>
+            <p>Le calmar méditant dans sa grotte cachée,</p>
+            <p>D'un geste mesuré, désigna la tranchée</p>
+            <p>Où gisait endormi sous les algues dansantes,</p>
+            <p>Un vaisseau oublié aux formes surprenantes.</p>
+            <div class="quote-block">
+                <p>« Ce sous-marin, dit-il, d'une voix cristalline,</p>
+                <p>Renferme en ses flancs la clé de ta destinée.</p>
+                <p>Un peuple ancien jadis le construisit, devine,</p>
+                <p>Pour explorer les lieux que nul n'a visités.</p>
+                <p>Les Anciens, créateurs de merveilles subtiles,</p>
+                <p>Façonnèrent ce vaisseau pour leur exploration.</p>
+                <p>Mi-matière, mi-esprit, ses circuits versatiles</p>
+                <p>Ne s'éveillent qu'au contact d'une âme en fusion.</p>
+                <p>Un être comme toi, nature composite,</p>
+                <p>Mi-oiseau, mi-poisson, mi-reptile intrépide,</p>
+                <p>Doté de l'œil qui voit et du bec qui ressent</p>
+                <p>Les courants invisibles dans l'onde passant.</p>
+                <p>Mais pour qu'il te conduise aux confins de ton rêve,</p>
+                <p>Il faudra des amis dont l'union s'achève.</p>
+                <p>Car nul ne peut, seul, dompter l'immensité,</p>
+                <p>Ni percer les secrets des gouffres agités. »</p>
+            </div>
+            <br>
+            <p>Arnay comprit alors le sens de sa mission:</p>
+            <p>Trouver des compagnons, former une union,</p>
+            <p>Où chacun apportant sa force singulière,</p>
+            <p>Ferait naître un dessein plus grand que leur prière.</p>
+            <p>Une légende ancienne, que Bahar lui conta,</p>
+            <p>Parlait d'un cristal pur caché aux fins fonds,</p>
+            <p>Qui rendrait au lagon sa splendeur d'autrefois,</p>
+            <p>Quand les eaux étaient claires et pures à la fois.</p>
+            <div class="quote-block">
+                <p>« Ce cristal, poursuivit le sage aux yeux anciens,</p>
+                <p>Est fragment de l'étoile d'où vinrent les Anciens.</p>
+                <p>En lui réside encore le pouvoir d'harmonie</p>
+                <p>Qui faisait de leur monde un jardin infini. »</p>
+            </div>
+            <br>
+            <p>Ainsi naquit la quête de notre héros brave,</p>
+            <p>Non par désir de gloire ou d'un trésor avare,</p>
+            <p>Mais pour rendre au lagon sa santé d'antan,</p>
+            <p>Et prouver la valeur d'un rêveur persistant.</p>
+        </section>
 
-    <div class="container mx-auto px-4 py-12 max-w-4xl bg-white rounded-lg shadow-md mt-8">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">L'Ornithorynque qui dirigea un sous-marin</h1>
-        <p class="text-gray-600 text-sm mb-8">Publié le 1er Juin 2025</p>
+        <section id="ballet-complicites" class="mb-8">
+            <h2>Un Ballet d'Invisibles Complicités</h2>
+            <p>Dès que l'aurore eut empourpré les cieux,</p>
+            <p>Arnay se mit en quête d'êtres précieux.</p>
+            <p>Il savait que l'esprit, pour grand qu'il puisse être,</p>
+            <p>Sans les mains du labeur ne peut rien faire naître.</p>
+            <br>
+            <p>Il trouva près d'un barrage, actif et concentré,</p>
+            <p>Zillus, le <i>castélyme aux pattes agiles</i>,</p>
+            <p>Créature inconnue qui taillait avec dextérité :</p>
+            <p>« Ton talent, lui dit-il, rendrait l'acier docile. »</p>
+            <br>
+            <p>Zillus, être étrange né de castor et de moule,</p>
+            <p>Hérita de son père l'art de construire,</p>
+            <p>Et de sa mère nacrée la capacité folle</p>
+            <p>De sculpter la matière sans jamais la détruire.</p>
+            <p>Solitaire par nature, rejeté pour sa différence,</p>
+            <p>Il bâtissait des barrages que nul n'habitait,</p>
+            <p>Cherchant dans le labeur à trouver son essence,</p>
+            <p>Et dans chaque structure son âme il projetait.</p>
+            <div class="quote-block">
+                <p>« Pourquoi te suivrais-je ? demanda-t-il, méfiant.</p>
+                <p>Mon travail me suffit et ma solitude aussi.</p>
+                <p>De vos vastes projets, l'écho ne m'atteint plus. »</p>
+                <p>« Car ton œuvre, répondit Arnay confiant,</p>
+                <p>Mérite un plus grand théâtre que ce recoin transi,</p>
+                <p>Et ton talent, Zillus, n'est fait pour être reclus. »</p>
+            </div>
+            <br>
+            <p>Plus loin, dans un courant aux remous dangereux,</p>
+            <p>Naoli plongeait, <i>gracieuse et rapide</i>:</p>
+            <p>« Ton corps sait épouser les flots impétueux,</p>
+            <p>Viens donc guider nos voies en ces eaux perfides. »</p>
+            <br>
+            <p>Naoli, la <i>naïade aux écailles d'argent</i>,</p>
+            <p>Mi-sirène, mi-dauphin, née d'amours interdites,</p>
+            <p>Maîtrisait les courants d'un geste négligent,</p>
+            <p>Mais cachait en son cœur des blessures non dites.</p>
+            <p>Rejetée par les deux clans de ses origines,</p>
+            <p>Elle avait fait des flots son unique famille,</p>
+            <p>Traduisant en mouvements sa peine clandestine,</p>
+            <p>Dansant avec les vagues sa douleur qui scintille.</p>
+            <div class="quote-block">
+                <p>« Je n'ai que faire des autres, dit-elle fièrement.</p>
+                <p>L'eau comprend mieux mon cœur que tout être vivant. »</p>
+                <p>« Peut-être, dit Arnay, mais ton art transcendant</p>
+                <p>Pourrait sauver des vies en guidant notre élan. »</p>
+            </div>
+            <br>
+            <p>Sur un récif perché, observant l'horizon,</p>
+            <p>Velar, le <i>sage héron</i> semblait en sentinelle :</p>
+            <p>« Ton œil perçant, ami, sera notre vision</p>
+            <p>Quand l'obscur nous guettera en ombres éternelles. »</p>
+            <br>
+            <p>Velar, né aveugle puis guéri par miracle</p>
+            <p>Quand un éclair frappa le nid de son enfance,</p>
+            <p>Avait depuis lors une vue spectaculaire</p>
+            <p>Qui perçait même la nuit de sa puissance.</p>
+            <p>Marginalisé pour ce don jugé étrange,</p>
+            <p>Il s'était isolé sur ce récif austère,</p>
+            <p>Observant sans relâche, <i>le cœur lourd d'absence</i>,</p>
+            <p>Les secrets que la vie au loin peut nous soustraire.</p>
+            <div class="quote-block">
+                <p>« Les profondeurs m'effraient, dit-il sans détour.</p>
+                <p>Mes ailes préfèrent l'air et sa clarté du jour. »</p>
+                <p>« Pourtant, répondit Arnay, ton regard tuteur</p>
+                <p>Est le phare qu'il nous faut dans cette noirceur. »</p>
+            </div>
+            <br>
+            <p>Gardant les fonds marins, déchargeant son fluide,</p>
+            <p>Étharia l'<i>anguillone aux pouvoirs électriques</i>:</p>
+            <p>« Ta force illuminant notre chemin fluide</p>
+            <p>Nous guidera, sans doute, aux abysses mystiques. »</p>
+            <br>
+            <p>Étharia, née de l'union improbable</p>
+            <p>D'une anguille des abysses et d'un éclair vivant</p>
+            <p>Capturé dans les eaux un soir mémorable</p>
+            <p>Où le ciel et la mer fusionnèrent un instant.</p>
+            <p>Son corps luminescent émettait un courant</p>
+            <p>Qui effrayait les autres et la laissait esseulée,</p>
+            <p>Cherchant dans les profondeurs un apaisement</p>
+            <p>À la puissance en elle jamais apprivoisée.</p>
+            <div class="quote-block">
+                <p>« Ma charge est dangereuse, prévint-elle, soucieuse.</p>
+                <p>Je pourrais vous blesser d'une simple émotion. »</p>
+                <p>« C'est justement ce feu, cette force précieuse,</p>
+                <p>Qui éclairera notre navigation. »</p>
+            </div>
+            <br>
+            <p>À chacun, l'ornithorynque exposa son projet,</p>
+            <p>Non sans quelques railleries à supporter:</p>
+            <p>« Un sous-marin? Par toi? Quelle folle entreprise!</p>
+            <p>Qui vit jamais ton bec mener pareille emprise ? »</p>
+            <p>Mais la sincérité qui brillait dans ses yeux,</p>
+            <p>Et la noble ambition qui guidait sa parole,</p>
+            <p>Touchèrent chaque cœur en un point vertueux</p>
+            <p>Qui fit taire le doute et les propos frivoles.</p>
+            <div class="quote-block">
+                <p>« Amis, leur dit Arnay, voyez sous ces ondes</p>
+                <p>Un navire assoupi qui fut jadis féconde</p>
+                <p>Machine explorant les tréfonds du lagon.</p>
+                <p>Ensemble, rendons-lui sa force et son renom. »</p>
+            </div>
+            <br>
+            <p>Chacun seul eût été comme un fil sans usage,</p>
+            <p>Mais tissés par leur but, ils formaient un ouvrage.</p>
+            <p>Ils suivirent Bahar jusqu'à l'épave sombre</p>
+            <p>Qui gisait, oubliée, dans les aqueux décombres.</p>
+            <br>
+            <p>La patience fut leur première leçon,</p>
+            <p>Un pas après l'autre, sans précipitation.</p>
+            <p>Pour chaque tâche neuve, un coquillage ils posaient,</p>
+            <p>Le déplaçant ensuite quand ils progressaient.</p>
+            <p>Au cœur de ce vaisseau, un tableau de commandes</p>
+            <p>Attendait que Arnay, de son bec sensible,</p>
+            <p>Réveillât les circuits qui, selon la légende,</p>
+            <p>Ne répondaient qu'au toucher d'un être compatible.</p>
+            <p>L'ornithorynque approcha, tremblant mais résolu,</p>
+            <p>Et posa doucement son bec sur le panneau.</p>
+            <p>Un frisson parcourut le métal, <i>froid et vibrant</i>, inattendu,</p>
+            <p>Puis un souffle profond, <i>comme un géant s'éveillant</i>.</p>
+            <p>Et des lumières bleues s'allumèrent à nouveau,</p>
+            <p>Dessinant sur les murs des ombres en bandeau.</p>
+            <br>
+            <div class="quote-block">
+                <p>« Je le savais ! s'écria Bahar triomphant.</p>
+                <p>La légende disait vrai sur tous les points:</p>
+                <p>Seul un être double, eau et terre habitant,</p>
+                <p>Pourrait réveiller l'âme de ces anciens témoins. »</p>
+            </div>
+            <br>
+            <p>Ainsi nuit après nuit, sous leurs mains attentives,</p>
+            <p>Le vaisseau (qu'ils nommèrent "Symbiose") prit vie.</p>
+            <p>Les leviers frémissaient, les pompes respiraient,</p>
+            <p>Et la coque vibrante un chant d'espoir livrait.</p>
+            <p>Ce nom, "Symbiose", n'était point choisi au hasard,</p>
+            <p>Mais reflétait l'essence même de leur union:</p>
+            <p>Comme ces organismes qui, par un pacte rare,</p>
+            <p>S'entraident mutuellement sans compétition.</p>
+            <br>
+            <div class="morale-box">
+                <p>Telle est l'œuvre du temps quand l'effort est constant:</p>
+                <p>Ce qu'on croyait perdu ressuscite pourtant.</p>
+                <p>Ce n'est point la hâte qui mène à bon port,</p>
+                <p>Mais l'union des cœurs dans un même transport.</p>
+            </div>
+        </section>
 
-        <img class="w-full h-64 object-cover rounded-lg mb-8" src="/ingenium-flow-website/assets/images/fable-ornithorynque-banniere.jpg" alt="Illustration d'un ornithorynque devant un sous-marin">
+        <section id="premiere-plongee" class="mb-8">
+            <h2>La Première Plongée</h2>
+            <p>L'aube vit s'animer cette étrange assemblée :</p>
+            <p>Un ornithorynque au poste de commande,</p>
+            <p>Zillus aux machines vigilant et zélé,</p>
+            <p>Naoli aux gouvernails suivant l'onde grande.</p>
+            <p>Velar aux hublots surveillait l'horizon,</p>
+            <p>Étharia aux circuits générait la puissance.</p>
+            <p>Bahar les guidait de ses conseils profonds,</p>
+            <p>Transmettant son savoir avec bienveillance.</p>
+            <div class="quote-block">
+                <p>« Avant de nous lancer vers l'abîme attirant,</p>
+                <p>Dit Arnay attentif, écoutons le vaisseau.</p>
+                <p>Comme tout être neuf, il parle en apprenant,</p>
+                <p>Ses bruits nous guideront mieux que mille flambeaux. »</p>
+            </div>
+            <br>
+            <div class="morale-box">
+                <p>Qu'il est sage, celui qui, avant de partir,</p>
+                <p>Connaît son instrument et ses propres limites !</p>
+                <p>Combien de capitaines vit-on s'engloutir</p>
+                <p>Pour avoir négligé cette règle tacite !</p>
+            </div>
+            <br>
+            <p>Les premiers mouvements furent hésitants,</p>
+            <p>La Symbiose oscillait comme un nouveau-né.</p>
+            <p>Naoli aux commandes s'adaptait pourtant,</p>
+            <p>Traduisant en actions les ordres murmurés.</p>
+            <p>Ses mains agiles dansaient sur les gouvernails,</p>
+            <p>Comme jadis elles avaient dansé dans les courants.</p>
+            <p>Cette danse nouvelle donnait un sens au travail</p>
+            <p>Qu'elle avait toujours fui en son isolement.</p>
+            <p>Car Arnay ne criait point comme ces tyrans</p>
+            <p>Qui pensent que le bruit renforce le message;</p>
+            <p>Sa voix restait posée même dans les courants</p>
+            <p>Qui secouaient parfois leur fragile équipage.</p>
+            <p>Zillus, à son poste, réglait avec finesse</p>
+            <p>Les mécanismes complexes du sous-marin.</p>
+            <p>Ses doigts, habitués à façonner sans cesse,</p>
+            <p>Trouvaient dans cette tâche un plaisir souverain.</p>
+            <p>S'enfonçant lentement dans l'abîme insondé,</p>
+            <p>Le sous-marin pénétrait un monde inexploré.</p>
+            <p>Les parois d'un canyon, cathédrale marine,</p>
+            <p>Sur l'équipage ému refermaient leur courtine.</p>
+            <p>Velar, malgré sa peur des espaces clos,</p>
+            <p>Scrutait l'obscurité de son regard perçant.</p>
+            <p>Dans ces ténèbres profondes, son don, son fardeau,</p>
+            <p>Devenait pour l'équipe un atout puissant.</p>
+            <p>Arnay, à son poste, percevait les signaux</p>
+            <p>Que l'eau transmettait dans ses courants nouveaux.</p>
+            <p>Une fréquence vive emplissait la cabine,</p>
+            <p>Promesse du trésor que le fond illumine.</p>
+            <br>
+            <p>Quand soudain jaillit l'eau par une brèche ouverte !</p>
+            <p>L'équipage stupéfait <i>sentit la mort voisine</i>.</p>
+            <p>Un cri d'effroi <i>s'étrangla, muet, dans la cabine</i>,</p>
+            <p>Mais l'ornithorynque, sans clameur alerte,</p>
+            <p>D'un geste désigna la fissure malsaine.</p>
+            <p>Zillus s'élança, outil en main serré,</p>
+            <p>Tandis qu'Étharia de son corps électrique</p>
+            <p>Soudait le métal cédant sous la pression,</p>
+            <p>Naoli stabilisait leur position critique.</p>
+            <p>Étharia, pour la première fois de sa vie,</p>
+            <p>Utilisa son pouvoir non pour s'isoler,</p>
+            <p>Mais pour souder la brèche avec une énergie</p>
+            <p>Qui, loin de détruire, venait tout réparer.</p>
+            <p>Quand le calme revint sur la coque apaisée,</p>
+            <p>Un murmure ancien vibra dans la rocaille,</p>
+            <p>Et le tableau de bord s'illumina soudain</p>
+            <p>D'un schéma révélant leur position exacte.</p>
+            <div class="quote-block">
+                <p>« Voyez ! s'exclama Arnay, la Symbiose parle !</p>
+                <p>Elle nous montre la route vers un lieu sacré,</p>
+                <p>Où jadis les Anciens cachèrent le cristal</p>
+                <p>Qui pourrait au lagon rendre sa pureté. »</p>
+            </div>
+            <br>
+            <p>Des symboles nouveaux sur l'écran apparurent,</p>
+            <p>Indiquant un passage vers des grottes obscures</p>
+            <p>Où nul être vivant n'avait porté ses pas</p>
+            <p>Depuis que les Anciens avaient quitté ces lieux.</p>
+            <div class="quote-block">
+                <p>« Ces signes, dit Bahar, sont l'antique langage</p>
+                <p>Que les Anciens utilisaient pour communiquer.</p>
+                <p>Ils parlent de gardiens, d'épreuves et de passage</p>
+                <p>Que seuls les cœurs vaillants sauront traverser. »</p>
+            </div>
+            <br>
+            <div class="quote-block">
+                <p>« Amis, dit l'ornithorynque, l'heure est venue</p>
+                <p>De prouver que notre union n'est point vaine.</p>
+                <p>Le chemin sera sombre, étroit, plein d'imprévus,</p>
+                <p>Mais notre but commun guidera notre chaîne. »</p>
+            </div>
+            <br>
+            <p>À ces mots, chacun sentit grandir en son cœur</p>
+            <p>Cette flamme qui change l'épreuve en honneur.</p>
+            <p>Plus qu'un simple voyage au fond des eaux dormantes,</p>
+            <p>C'était la quête d'une harmonie renaissante.</p>
+        </section>
 
-        <div class="prose prose-lg text-gray-700 leading-relaxed">
-            <p>Dans les profondeurs azurées du Grand Récif, où les coraux dansaient comme des flammes sous-marines, vivait une colonie de poissons-chirurgiens, de méduses luminescentes, et une créature des plus singulières : un ornithorynque nommé Platy. Platy n'était pas comme les autres habitants du récif. Mi-canard, mi-loutre, mi-castor, avec un bec sensible et un venin discret, il était un assemblage de singularités, souvent regardé avec curiosité, parfois avec scepticisme. Pourtant, Platy possédait un don unique : une curiosité insatiable et une capacité à voir les choses sous des angles inattendus.</p>
+        <section id="detroit-epreuves" class="mb-8">
+            <h2>Le Détroit des Épreuves</h2>
+            <p>La Symbiose glissa dans un défilé sombre</p>
+            <p>Où l'eau plus dense semblait résister au mouvement.</p>
+            <p>Les parois se resserraient, multipliant les ombres,</p>
+            <p>Et l'équipage entier retint son souffle ardent.</p>
+            <div class="quote-block">
+                <p>« Pour franchir ce passage, nous dit la légende,</p>
+                <p>Expliqua doctement Bahar, le vénérable calmar,</p>
+                <p>Il faut prouver valeurs que les Anciens demandent:</p>
+                <p>Patience et courage, sans terreur, sans retard. »</p>
+            </div>
+            <br>
+            <p>Les Anciens, créateurs d'énigmes et d'épreuves,</p>
+            <p>Avaient conçu ce lieu pour tester les cœurs,</p>
+            <p>Car ils savaient qu'un pouvoir sans sagesse éprouvée</p>
+            <p>Devient vite tyrannie et source de malheur.</p>
+            <p>Arnay imposa alors un rituel prudent:</p>
+            <p>Après chaque manœuvre, un silence attentif,</p>
+            <p>Pour écouter le chant du vaisseau confiant,</p>
+            <p>Et le pouls de chacun, témoin de l'instinct vif.</p>
+            <p>Naoli consignait ces temps dans son carnet,</p>
+            <p>Zillus marquait le rythme en tapotant discret.</p>
+            <p>Étharia ajustait les niveaux d'énergie,</p>
+            <p>Velar surveillait les obstacles surgis.</p>
+            <p>Chacun trouvait sa place en ce ballet précis,</p>
+            <p>Non plus par solitude, mais par complémentarité.</p>
+            <p>Ce qui naguère était leur plus grande faiblesse</p>
+            <p>Devenait maintenant leur plus belle richesse.</p>
+            <p>Quand une rafale vint secouer leur esquif,</p>
+            <p>Zillus chancela sous ce courant massif.</p>
+            <p>L'ornithorynque posa sa patte, geste fort,</p>
+            <p>Rappelant leur union contre les vents du sort.</p>
+            <p>Un passage étroit s'offrit à leur regard;</p>
+            <p>Chacun ajusta son souffle sans retard,</p>
+            <p>Écoutant le navire et son pouls régulier,</p>
+            <p>Dans un ballet précis que rien ne pouvait plier.</p>
+            <br>
+            <p>Soudain, la Symbiose s'immobilisa net,</p>
+            <p>Comme figée par une force invisible.</p>
+            <p>Un grondement sourd parcourut l'eau inquiète,</p>
+            <p>Et devant eux s'ouvrit un gouffre terrible.</p>
+            <div class="quote-block">
+                <p>« C'est le Gardien des lieux ! cria Bahar effrayé.</p>
+                <p>Un vortex qui dévore tout ce qui s'approche !</p>
+                <p>Les Anciens l'ont créé, savamment déployé,</p>
+                <p>Pour que seuls les plus dignes puissent passer outre ! »</p>
+            </div>
+            <br>
+            <p>Arnay comprit : le cristal, source de lumière,</p>
+            <p>Ne pouvait être pris par la force des bras.</p>
+            <p>Il exigeait l'esprit, une âme sans barrière,</p>
+            <p>Une confiance aveugle qui ne s'en va pas.</p>
+            <p>Il ferma les yeux, respira l'air salin,</p>
+            <p>Et visualisa l'union de toute l'équipe.</p>
+            <p>Non pas sa propre force, mais un tout divin,</p>
+            <p>Une énergie commune, un élan qui les grippe.</p>
+            <p>Et peu à peu le vortex, d'abord déchaîné,</p>
+            <p>Ralentit sa furie, se calma, apaisé,</p>
+            <p>Laissant un passage clair, tel un signe sacré.</p>
+            <p>Les Anciens veillaient, leur sagesse était là.</p>
+            <p>Le Gardien s'inclina devant leur cœur uni,</p>
+            <p>Reconnaissant en eux une grandeur d'esprit</p>
+            <p>Bien supérieure à celle des simples guerriers.</p>
+            <div class="morale-box">
+                <p>Devant l'obstacle immense, qui semble tout noyer,</p>
+                <p>Le pouvoir n'est rien sans la sagesse et le cœur.</p>
+                <p>Ce n'est pas la force brute qui peut tout déverrouiller,</p>
+                <p>Mais l'harmonie des âmes qui dissipe la peur.</p>
+            </div>
+        </section>
 
-            <p>La colonie faisait face à un défi de taille. Une zone de chasse essentielle était devenue inaccessible à cause d'une série de courants imprévisibles et dangereux. Les chefs traditionnels, de fiers thons et des requins-baleines majestueux, avaient essayé toutes les stratégies connues, mais sans succès. La frustration montait.</p>
+        <section id="sanctuaire-submerge" class="mb-8">
+            <h2>Le Sanctuaire Submergé</h2>
+            <p>Au-delà du vortex, un temple émergea,</p>
+            <p>De cristaux lumineux et d'algues arc-en-ciel.</p>
+            <p>Une lumière douce du fond s'y propagea,</p>
+            <p>Et l'équipage entier fut ravi de son miel.</p>
+            <p>Au centre du sanctuaire, posé sur un autel,</p>
+            <p>Brillait le cristal pur, l'Étoile du Lagon.</p>
+            <p>Il pulsait d'une vie, intense, immatérielle,</p>
+            <p>Remplissant de beauté tout cet ancien donjon.</p>
+            <p>Mais en s'approchant, une force invisible</p>
+            <p>Les repoussa doucement, sans violence, sans mal.</p>
+            <p>Le cristal, au contact, restait inaccessible,</p>
+            <p>Semblant attendre un geste, un signe primordial.</p>
+            <p>« Il n'est pas pour celui qui le prend, » dit Bahar, la voix basse.</p>
+            <p>« Mais pour celui qui sait que le pouvoir partage</p>
+            <p>Son cœur avec les autres, sans quête de suprématie. »</p>
+            <p>Arnay, se souvenant des paroles du calmar,</p>
+            <p>Posant sa patte sur le cristal qui l'efface,</p>
+            <p>Comprit alors le sens de ce divin message :</p>
+            <p>Le cristal exigeait le don de l'humilité,</p>
+            <p>Le renoncement à l'ego, pour une nouvelle voie.</p>
+            <p>Il tourna le bec vers son équipe, d'un air grave,</p>
+            <p>Et dit : « Ce n'est pas moi qui doit le ramasser,</p>
+            <p>Mais chacun de nous, en y posant sa patte à son tour,</p>
+            <p>Pour qu'il s'imprègne de notre union, de notre amour. »</p>
+            <p>Zillus s'approcha, posa sa patte à son tour,</p>
+            <p>Puis Naoli, Velar, Étharia, Bahar enfin.</p>
+            <p>Et à chaque contact, le cristal s'anima d'un jour</p>
+            <p>Plus éclatant, plus fort, comme un nouveau chemin.</p>
+            <p>Il devint léger, vibrant d'une énergie douce,</p>
+            <p>Et Arnay, sans effort, put le prendre en son bec.</p>
+            <p>Le lagon l'attendait, promesse de sa source,</p>
+            <p>Prêt à s'éveiller enfin de son sommeil sec.</p>
+        </section>
 
-            <p>Un jour, Platy, observant un banc de poissons se mouvoir en formation parfaite, eut une idée. Il avait toujours été fasciné par la manière dont chaque poisson, même le plus petit, contribuait à la fluidité et à la force du groupe sans qu'un seul ne "dirige" au sens conventionnel. Il proposa de construire un "véhicule sous-marin collectif", un sous-marin, qui permettrait de traverser les courants dangereux en tirant parti de la force de chacun, plutôt que de s'y opposer de front.</p>
+        <section id="retour-perilleux" class="mb-8">
+            <h2>Le Retour Périlleux</h2>
+            <p>Le retour fut semé d'embûches inattendues,</p>
+            <p>Le lagon jalousait son joyau retrouvé.</p>
+            <p>Des courants plus violents, des créatures inconnues,</p>
+            <p>Tentaient de s'emparer du trésor convoité.</p>
+            <p>Mais l'équipe était prête, unie et plus solide,</p>
+            <p>Chaque membre au travail, chaque force à sa place.</p>
+            <p>Naoli évitait les rochers, rapide et lucide,</p>
+            <p>Zillus réparait vite les brèches en tout temps.</p>
+            <p>Étharia, d'un éclair, chassait les prédateurs,</p>
+            <p>Velar guidait l'équipe à travers les ténèbres.</p>
+            <p>Bahar, d'une voix calme, apaisait les rumeurs,</p>
+            <p>Et Arnay, au gouvernail, bravait les intempéries.</p>
+            <p>Le cristal pulsait, les guidant sans faillir,</p>
+            <p>Tels des marins perdus par un phare attirés.</p>
+            <p>C'est dans cette épreuve que leur lien se fit fort,</p>
+            <p>Où chaque vulnérabilité devint un support.</p>
+            <p>La Symbiose remonta lentement vers la surface,</p>
+            <p>Portant en ses flancs l'espoir d'un monde nouveau.</p>
+            <p>Les premières lueurs de l'aube sur leurs faces</p>
+            <p>Illuminèrent des cœurs changés par le labeur.</p>
+            <div class="morale-box">
+                <p>Le vrai courage se révèle dans l'épreuve,</p>
+                <p>Non pas dans l'absence de peur, mais dans l'action.</p>
+                <p>Quand la vulnérabilité se fait preuve,</p>
+                <p>Alors naît la puissance de l'union.</p>
+            </div>
+        </section>
 
-            <p>L'idée fut accueillie par un mélange de rires et d'incrédulité. Un ornithorynque ? Un sous-marin ? Mais Platy, avec sa persévérance tranquille, expliqua sa vision : chaque membre de la colonie, quel que soit sa taille ou sa fonction, aurait un rôle précis. Les poissons-perroquets, avec leurs becs robustes, pourraient aider à forer les conduits. Les méduses, avec leur bioluminescence, illumineraient les profondeurs obscures. Les petits poissons-clowns, agiles et nombreux, assureraient la navigation fine et la communication interne. Les thons, avec leur force, seraient les propulseurs principaux. Platy, avec son bec sensible, détecterait les moindres variations de courant, guidant le vaisseau.</p>
+        <section id="renaissance-lagon" class="mb-8">
+            <h2>La Renaissance du Lagon</h2>
+            <p>Dès que le sous-marin émergea des flots bleus,</p>
+            <p>Le lagon s'éveilla, vibrant d'une clarté</p>
+            <p>Que nul n'avait connue depuis des siècles entiers.</p>
+            <p>Les eaux s'éclaircirent, les plantes refleurirent,</p>
+            <p>Les poissons jaillirent en mille couleurs vives.</p>
+            <p>Et un grand chant monta des profondeurs rives,</p>
+            <p>Celui de la vie retrouvée, libre et belle.</p>
+            <p>Arnay posa le cristal au centre du lagon,</p>
+            <p>Sur un rocher plat, visible de tous les lieux.</p>
+            <p>Une colonne de lumière s'éleva, intense,</p>
+            <p>Connectant l'eau au ciel, la terre aux astres.</p>
+            <p>Les habitants du lagon, stupéfaits, émerveillés,</p>
+            <p>Comprirent le miracle, le don de cette équipe.</p>
+            <p>Plus personne ne raillait Arnay, l'ornithorynque,</p>
+            <p>Ni les "différents" qui formaient son équipage.</p>
+            <p>Au lieu de se disperser, chacun apporta son aide,</p>
+            <p>Pour reconstruire ensemble le lagon à nouveau.</p>
+            <p>Le castor refaçonna les berges érodées,</p>
+            <p>Le héron surveilla les jeunes nids éclôt.</p>
+            <p>L'anguille illuminait les passages obscurs,</p>
+            <p>La sirène enseignait la danse des courants.</p>
+            <p>Le calmar contait les légendes des anciens,</p>
+            <p>Et l'ornithorynque veillait, <i>chef sans couronne</i>,</p>
+            <p>Guidant de sa sagesse les efforts de chacun.</p>
+            <p>Car il avait compris que le vrai leadership</p>
+            <p>N'était pas de donner des ordres à la volée,</p>
+            <p>Mais de révéler la force en chaque cœur.</p>
+            <p>Et le lagon devint plus beau qu'il ne l'avait été,</p>
+            <p>Symbole d'un savoir partagé, d'une force unie.</p>
+            <p>Des écoles s'ouvrirent, où les Anciens, revenus</p>
+            <p>(Non pas en corps, mais en esprit, par leurs légendes),</p>
+            <p>Enseignaient l'équilibre entre savoir et pouvoir.</p>
+            <p>Et les notes racontaient l'histoire</p>
+            <p>De leur long périple au cœur de l'inconnu.</p>
+            <p>Les jeunes écoutaient, émerveillés, émus.</p>
+            <p>La Symbiose fut placée près de la berge,</p>
+            <p>Monument silencieux de leur grande aventure.</p>
+            <p>Non plus machine de guerre ou simple refuge,</p>
+            <p>Mais symbole d'union et d'avenir plus pur.</p>
+            <br>
+            <p>Et Arnay, notre héros au bec si sensible,</p>
+            <p>Ne se proclama point roi ou chef suprême.</p>
+            <p>Il retourna, modeste, à sa quête paisible,</p>
+            <p>Observant le lagon vivre son nouveau poème.</p>
+            <p>Parfois, quand le soir tombait sur les eaux calmes,</p>
+            <p>On le voyait s'asseoir près du vieux sous-marin,</p>
+            <p>Traçant dans le sable ces cercles, ces spirales,</p>
+            <p>Qui avaient guidé ses pas sur l'ancien chemin.</p>
+            <p>Et si un jeune animal venait le questionner</p>
+            <p>Sur le secret profond de sa réussite étrange,</p>
+            <p>Il répondait simplement, regard illuminé :</p>
+            <div class="quote-block">
+                <p>« Ce n'est point le chef qui fait l'œuvre, mais l'échange. »</p>
+            </div>
+            <br>
+            <p class="text-center font-bold text-xl text-blue-800">
+                <br>
+                Ainsi s'achève ici notre conte aquatique,<br>
+                Mais point ne s'achève sa leçon, j'en suis certain.<br>
+                Car comme un sage fabuliste aurait pu dire :<br>
+                « L'union fait la force, mais plus encore : l'union inspire.<br>
+                Quand les talents s'assemblent au service d'un but,<br>
+                Ce qui semblait impossible trouve son salut. »
+            </p>
+        </section>
 
-            <p>Ce n'était pas un leadership par le pouvoir, mais par l'orchestration. Platy ne donnait pas d'ordres ; il créait les conditions pour que chacun puisse apporter sa contribution unique. Il écoutait les plus petits, intégrait les idées des plus grands, et trouvait des solutions créatives aux problèmes inattendus. Il valorisait la diversité, comprenant que chaque particularité était une force potentielle.</p>
-
-            <p>Après des semaines d'efforts collectifs, le sous-marin fut achevé. Il ne ressemblait à rien de connu, un assemblage improbable de coquillages, d'algues renforcées et de vessies natatoires réorientées. Il était mû par une symphonie de nages coordonnées, de bulles d'air comprimées et de signaux lumineux. Platy, humblement positionné à l'avant, sentait chaque pulsation de l'océan, traduisant les informations en mouvements collectifs.</p>
-
-            <p>La première traversée fut un succès éclatant. Le sous-marin collectif glissa à travers les courants tourbillonnants, une entité vivante, guidée par la sagesse de tous. La zone de chasse fut rouverte, et la colonie prospéra comme jamais auparavant.</p>
-
-            <p>Platy n'est jamais devenu un "chef" au sens traditionnel. Il est resté l'ornithorynque singulier, discret mais essentiel. Sa leçon : le véritable leadership ne réside pas toujours dans celui qui donne les ordres, mais dans celui qui voit le potentiel inexploité de chacun, qui tisse les liens entre les différences, et qui permet à un collectif de réaliser l'impensable en étant pleinement lui-même. C'est en embrassant notre propre singularité et en valorisant celle des autres que nous pouvons naviguer les courants les plus tumultueux et atteindre des horizons insoupçonnés.</p>
-        </div>
-        <div class="mt-8 text-center">
-            <a href="/ingenium-flow-website/articles.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg inline-block">Retour à la liste des articles</a>
-        </div>
     </div>
 
-    <footer class="bg-gray-800 text-white p-6 mt-12">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 Ingenium Flow. Tous droits réservés.</p>
-            <div class="mt-4">
-                <a href="https://twitter.com/votreprofil" class="text-gray-400 hover:text-white mx-2">Twitter</a>
-                <a href="https://linkedin.com/in/votreprofil" class="text-gray-400 hover:text-white mx-2">LinkedIn</a>
+    <footer class="bg-blue-800 dark:bg-blue-900 text-white text-center p-4 mt-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>&copy; 2024 Ingenium Flow. Tous droits réservés.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="/ingenium-flow-website/mentions-legales.html" class="hover:text-gray-300 text-sm">Mentions Légales</a>
+                <a href="/ingenium-flow-website/politique-confidentialite.html" class="hover:text-gray-300 text-sm">Politique de Confidentialité</a>
             </div>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('nav-toggle').onclick = function(){
-            document.getElementById('nav-content').classList.toggle('hidden');
-        }
-    </script>
-
 </body>
 </html>
