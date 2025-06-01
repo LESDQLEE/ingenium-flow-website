@@ -3,128 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Lézard, la Grenouille et les Échos du Passé - Ingenium Flow</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Le Lézard, la Grenouille et les Échos du Passé : Fable sur la Peur et la Compassion - Ingenium Flow</title>
+    <meta name="description" content="Découvrez une fable moderne sur la peur, la compassion et la force de l'amitié pour surmonter les échos du passé. Une lecture inspirante par Ingenium Flow.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="/ingenium-flow-website/assets/images/favicon.ico" type="image/x-icon">
     <style>
+        /* Styles personnalisés pour la lecture et l'UX */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Couleur de fond légère */
-            color: #374151; /* Couleur du texte principal */
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.7; /* Légèrement plus d'interligne */
+            background-color: #f8f9fa; /* Couleur de fond légère */
         }
-        .container {
-            max-width: 800px; /* Largeur maximale pour le contenu de l'article */
-        }
-        /* Styles pour les titres */
         h1, h2, h3, h4 {
-            font-weight: 700; /* Gras pour les titres */
-            color: #1f2937; /* Couleur plus foncée pour les titres */
+            font-family: 'Playfair Display', serif;
+            color: #0A1128; /* Couleur primaire d'Ingenium Flow */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
         }
-        h1 {
-            font-size: 2.5rem; /* Grande taille pour le titre principal */
-        }
-        h2 {
-            font-size: 2rem; /* Taille pour les sections */
-        }
-        h3 {
-            font-size: 1.5rem; /* Taille pour les chapitres */
-        }
-        /* Styles pour les paragraphes */
+        h1 { font-size: 2.8rem; text-align: center; color: #034078; } /* Royal Blue */
+        h2 { font-size: 2.2rem; border-bottom: 2px solid #034078; padding-bottom: 0.3em; margin-top: 2.5em; }
+        h3 { font-size: 1.8rem; color: #001F54; } /* Medium Blue */
         p {
-            line-height: 1.75; /* Espacement des lignes pour la lisibilité */
-            margin-bottom: 1rem; /* Marge sous les paragraphes */
+            margin-bottom: 1em;
+            text-align: justify;
         }
-        /* Styles spécifiques pour les citations ou les éléments mis en avant */
-        .highlight {
+        .container-fable {
+            max-width: 800px; /* Largeur optimale pour la lecture */
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+        .prelude, .morale-box {
+            background-color: #e0f2f7; /* Couleur douce pour encadrés */
+            border-left: 5px solid #034078;
+            padding: 1.5em;
+            margin-bottom: 2em;
             font-style: italic;
-            color: #4b5563;
+            border-radius: 4px;
+        }
+        .section-title {
+            text-align: center;
+            font-weight: 600;
+            color: #034078;
+            margin-top: 3em;
+            margin-bottom: 1.5em;
+        }
+        .quote-block {
+            font-style: italic;
+            background-color: #f0f8ff;
+            border-left: 3px solid #034078;
+            padding: 1em 1.5em;
+            margin: 1.5em 0;
+            quotes: "“" "”" "‘" "’"; /* Pour les guillemets stylisés si utilisés */
+        }
+        .quote-block p::before {
+            content: open-quote;
+            font-size: 2em;
+            line-height: 0.1em;
+            vertical-align: -0.4em;
+            margin-right: 0.15em;
+            color: #034078;
+        }
+        .quote-block p::after {
+            content: close-quote;
+            font-size: 2em;
+            line-height: 0.1em;
+            vertical-align: -0.4em;
+            margin-left: 0.15em;
+            color: #034078;
+        }
+
+        .author-note {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+        .table-of-contents {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .table-of-contents h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
+            font-size: 1.4rem;
+            color: #0A1128;
+        }
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+        .table-of-contents a {
+            color: #034078;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.5rem; }
+            .container-fable {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
-<body class="p-4 sm:p-6 md:p-8">
-    <div class="container mx-auto bg-white shadow-lg rounded-xl p-6 sm:p-8 md:p-10 lg:p-12">
+<body>
+    <header>
+        <nav class="bg-blue-800 dark:bg-blue-900 shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="/ingenium-flow-website/" class="text-white text-2xl font-bold">Ingenium Flow</a>
+                        </div>
+                        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                            <a href="/ingenium-flow-website/" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Accueil</a>
+                            <a href="/ingenium-flow-website/services.html" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                            <a href="/ingenium-flow-website/articles.html" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Articles & Écrits</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fable mt-8 mb-8">
+
         <header class="text-center mb-10">
-            <h1 class="text-indigo-700 mb-2">Ingenium Flow</h1>
-            <h2 class="text-gray-800 mb-4">Articles & Écrits</h2>
-            <h3 class="text-gray-900 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">LE LÉZARD, LA GRENOUILLE ET LES ÉCHOS DU PASSÉ</h3>
-            <p class="text-lg text-gray-600 mb-2">Murmures d'une entente en clair-obscur</p>
-            <p class="text-xl text-gray-700 font-semibold mb-4">Une Fable Moderne sur la Peur et la Compassion</p>
-            <p class="text-sm text-gray-500">par Elyes Dekhili</p>
-            <p class="text-sm text-gray-500">(Livre II - Les Gardiens du Lagon)</p>
+            <h1>LE LÉZARD, LA GRENOUILLE ET LES ÉCHOS DU PASSÉ</h1>
+            <p class="text-xl italic text-gray-600">Murmures d'une entente en clair-obscur</p>
+            <p class="text-lg font-semibold text-gray-700 mt-4">Une Fable Moderne sur la Peur et la Compassion</p>
         </header>
 
-        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-inner">
-            <h3 class="text-2xl font-bold mb-4 text-gray-800">Table des Matières</h3>
-            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                <li><a href="#preambule" class="hover:text-indigo-600">Préambule – L'Écho du Lagon et les Ombres Intérieures</a></li>
-                <li><a href="#jeu-freres" class="hover:text-indigo-600">Le Jeu des Frères – Insouciance et Rêves Secrets</a></li>
-                <li><a href="#mystere-refuge" class="hover:text-indigo-600">Le Mystère du Refuge – Un Soupir dans l'Obscurité</a></li>
-                <li><a href="#rencontre-kochari" class="hover:text-indigo-600">La Rencontre – Kochari, Prisonnière de l'Ombre</a></li>
-                <li><a href="#recit-terreur" class="hover:text-indigo-600">Le Récit de la Terreur – L'Ombre du Vison</a></li>
-                <li><a href="#graine-courage" class="hover:text-indigo-600">La Graine du Courage – Une Lumière dans le Dialogue</a></li>
-                <li><a href="#premier-pas" class="hover:text-indigo-600">Le Premier Pas – L'Éveil à la Lumière</a></li>
-                <li><a href="#revelation-kaijane" class="hover:text-indigo-600">La Révélation de Kaijane – La Vérité Dissipe la Peur</a></li>
-                <li><a href="#renaissance" class="hover:text-indigo-600">La Renaissance – Jeux de Lumière et d'Amitié</a></li>
-                <li><a href="#heritage-coeurs" class="hover:text-indigo-600">L'Héritage des Cœurs – La Morale Éternelle</a></li>
+        <div class="author-note">
+            <p>par Elyes Dekhili</p>
+            <p class="text-sm">(Livre II - Les Gardiens du Lagon)</p>
+        </div>
+
+        <div class="table-of-contents">
+            <h3>Table des Matières</h3>
+            <ul>
+                <li><a href="#preambule">Préambule – L'Écho du Lagon et les Ombres Intérieures</a></li>
+                <li><a href="#jeu-freres">Le Jeu des Frères – Insouciance et Rêves Secrets</a></li>
+                <li><a href="#mystere-refuge">Le Mystère du Refuge – Un Soupir dans l'Obscurité</a></li>
+                <li><a href="#rencontre-kochari">La Rencontre – Kochari, Prisonnière de l'Ombre</a></li>
+                <li><a href="#recit-terreur">Le Récit de la Terreur – L'Ombre du Vison</a></li>
+                <li><a href="#graine-courage">La Graine du Courage – Une Lumière dans le Dialogue</a></li>
+                <li><a href="#premier-pas">Le Premier Pas – L'Éveil à la Lumière</a></li>
+                <li><a href="#revelation-kaijane">La Révélation de Kaijane – La Vérité Dissipe la Peur</a></li>
+                <li><a href="#renaissance">La Renaissance – Jeux de Lumière et d'Amitié</a></li>
+                <li><a href="#heritage-coeurs">L'Héritage des Cœurs – La Morale Éternelle</a></li>
             </ul>
+        </div>
+
+        <section id="preambule" class="mb-8">
+            <h2>Préambule – L'Écho du Lagon et les Ombres Intérieures</h2>
+            <div class="prelude">
+                <p>Après que le lagon, jadis obscurci,<br>Eut retrouvé sa clarté, son chant, sa vie,<br>Grâce à l'union des cœurs et des talents divers,<br>Une paix nouvelle enveloppa l'univers.<br>Les eaux cristallines, les plantes refleuries,<br>Témoignaient du pouvoir des âmes réunies.<br>Mais la nature, hélas, est pleine de mystères,<br>Et si les grands périls avaient cessé leurs guerres,<br>Des ombres plus subtiles, nées de l'âme et du temps,<br>Pouvaient encore emprisonner les êtres vivants.<br>Car la peur, tel un voile, peut obscurcir l'esprit,<br>Même quand le danger, au loin, s'est enfui.<br>Elle se niche parfois au creux des souvenirs,<br>Transformant le passé en de sombres avenirs.<br>Voici donc le récit, loin des flots du lagon,<br>D'un jeune cœur ardent et d'une âme en prison,<br>Qui par l'écoute et l'échange, au-delà des apparences,<br>Trouvèrent la lumière et la vraie délivrance.</p>
+            </div>
         </section>
 
-        <article class="space-y-8">
-            <section id="preambule">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">Préambule – L'Écho du Lagon et les Ombres Intérieures</h3>
-                <p>Après que le lagon, jadis obscurci,<br>Eut retrouvé sa clarté, son chant, sa vie,<br>Grâce à l'union des cœurs et des talents divers,<br>Une paix nouvelle enveloppa l'univers.<br>Les eaux cristallines, les plantes refleuries,<br>Témoignaient du pouvoir des âmes réunies.<br>Mais la nature, hélas, est pleine de mystères,<br>Et si les grands périls avaient cessé leurs guerres,<br>Des ombres plus subtiles, nées de l'âme et du temps,<br>Pouvaient encore emprisonner les êtres vivants.<br>Car la peur, tel un voile, peut obscurcir l'esprit,<br>Même quand le danger, au loin, s'est enfui.<br>Elle se niche parfois au creux des souvenirs,<br>Transformant le passé en de sombres avenirs.<br>Voici donc le récit, loin des flots du lagon,<br>D'un jeune cœur ardent et d'une âme en prison,<br>Qui par l'écoute et l'échange, au-delà des apparences,<br>Trouvèrent la lumière et la vraie délivrance.</p>
-            </section>
+        <section id="jeu-freres" class="mb-8">
+            <h2>Le Jeu des Frères – Insouciance et Rêves Secrets</h2>
+            <p>Non loin de Glendalough, où les monts de Wicklow<br>Dessinent des vallons de mousse et de roseaux,<br>Deux petits lézards vifs, frères de sang et de jeu,<br>S'adonnaient à cache-cache, sous un ciel radieux.<br>L'aîné, nommé Kaijane, cherchait avec ardeur,<br>Son cadet, le petit Zillus, plein de malice et d'humour.<br>Zillus, fier de sa ruse, avait trouvé un abri,<br>Un trou bien dissimulé, sous l'ombre des genévriers.<br>Il riait en silence, voyant son frère passer,<br>À quelques pas de lui, sans jamais le trouver.<br>Une idée alors germa dans sa tête mutine :<br>Garder ce lieu secret, en faire sa cabine,<br>Y cacher des friandises, ses jouets les plus chers,<br>Une forteresse intime, loin des regards amers.<br>"Je ferai de ce lieu mon antre, mon domaine,"<br>Pensait-il avec ruse, le cœur plein de lui-même.<br>"Un royaume miniature, où seul mon rire importe,"<br>Il s'imaginait déjà, maître de son refuge,<br>Ignorant que le destin, parfois, nous submerge,<br>Et que les plus petits trous cachent de grands déluges.<br>Pendant que ces pensées, égoïstes et légères,<br>Tourbillonnaient dans sa tête, promesses chimères,<br>Kaijane, lui, continuait sa quête patiente,<br>Son instinct de grand frère, une voix insistante,<br>Lui murmurait qu'un jeu trop long, trop silencieux,<br>Pouvait cacher un trouble, un danger insidieux.</p>
+        </section>
 
-            <section id="jeu-freres">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">Le Jeu des Frères – Insouciance et Rêves Secrets</h3>
-                <p>Non loin de Glendalough, où les monts de Wicklow<br>Dessinent des vallons de mousse et de roseaux,<br>Deux petits lézards vifs, frères de sang et de jeu,<br>S'adonnaient à cache-cache, sous un ciel radieux.<br>L'aîné, nommé Kaijane, cherchait avec ardeur,<br>Son cadet, le petit Zillus, plein de malice et d'humour.<br>Zillus, fier de sa ruse, avait trouvé un abri,<br>Un trou bien dissimulé, sous l'ombre des genévriers.<br>Il riait en silence, voyant son frère passer,<br>À quelques pas de lui, sans jamais le trouver.<br>Une idée alors germa dans sa tête mutine :<br>Garder ce lieu secret, en faire sa cabine,<br>Y cacher des friandises, ses jouets les plus chers,<br>Une forteresse intime, loin des regards amers.<br>"Je ferai de ce lieu mon antre, mon domaine,"<br>Pensait-il avec ruse, le cœur plein de lui-même.<br>"Un royaume miniature, où seul mon rire importe,"<br>Il s'imaginait déjà, maître de son refuge,<br>Ignorant que le destin, parfois, nous submerge,<br>Et que les plus petits trous cachent de grands déluges.<br>Pendant que ces pensées, égoïstes et légères,<br>Tourbillonnaient dans sa tête, promesses chimères,<br>Kaijane, lui, continuait sa quête patiente,<br>Son instinct de grand frère, une voix insistante,<br>Lui murmurait qu'un jeu trop long, trop silencieux,<br>Pouvait cacher un trouble, un danger insidieux.</p>
-            </section>
+        <section id="mystere-refuge" class="mb-8">
+            <h2>Le Mystère du Refuge – Un Soupir dans l'Obscurité</h2>
+            <p>Alors que Zillus savourait son triomphe caché,<br>Un murmure inattendu, grave et mélancolique,<br>Vint briser son délire, d'un son presque mystique.<br>Soudain, un soupir, profond, presque sans force,<br>Émana des ténèbres, là où la nuit s'incruste,<br>Un souffle lourd, chargé d'une peine immense.<br>Un frisson parcourut le corps du jeune Zillus,<br>Son rire s'éteignit, son cœur se fit minuscule.<br>L'obscurité du trou, dense et impénétrable,<br>L'empêchait de percer ce mystère effroyable.<br>Une odeur de terre humide, de confinement ancien,<br>Montait des profondeurs, lourde et oppressante.<br>Un écho faible, un sanglot à peine audible,<br>L'invita à s'approcher, malgré un froid sensible.<br>Le cœur battant, mais l'esprit plein de courage,<br>Zillus s'approcha de la source, bravant les fantômes.<br>Il s'attendait à trouver quelque bête blessée,<br>Ou peut-être un piège, une ruse mal pensée.<br>L'air se fit plus lourd, le silence plus pesant,<br>Chaque pas vers l'inconnu était un pas tremblant.</p>
+        </section>
 
-            <section id="mystere-refuge">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">Le Mystère du Refuge – Un Soupir dans l'Obscurité</h3>
-                <p>Alors que Zillus savourait son triomphe caché,<br>Un murmure inattendu, grave et mélancolique,<br>Vint briser son délire, d'un son presque mystique.<br>Soudain, un soupir, profond, presque sans force,<br>Émana des ténèbres, là où la nuit s'incruste,<br>Un souffle lourd, chargé d'une peine immense.<br>Un frisson parcourut le corps du jeune Zillus,<br>Son rire s'éteignit, son cœur se fit minuscule.<br>L'obscurité du trou, dense et impénétrable,<br>L'empêchait de percer ce mystère effroyable.<br>Une odeur de terre humide, de confinement ancien,<br>Montait des profondeurs, lourde et oppressante.<br>Un écho faible, un sanglot à peine audible,<br>L'invita à s'approcher, malgré un froid sensible.<br>Le cœur battant, mais l'esprit plein de courage,<br>Zillus s'approcha de la source, bravant les fantômes.<br>Il s'attendait à trouver quelque bête blessée,<br>Ou peut-être un piège, une ruse mal pensée.<br>L'air se fit plus lourd, le silence plus pesant,<br>Chaque pas vers l'inconnu était un pas tremblant.</p>
-            </section>
+        <section id="rencontre-kochari" class="mb-8">
+            <h2>La Rencontre – Kochari, Prisonnière de l'Ombre</h2>
+            <p>Et là, dans la pénombre, il distingua une frêle silhouette.<br>C'était une grenouille, chétive, maigre et pâle,<br>Ses yeux, deux perles ternes, reflétaient une détresse<br>Dont la voix, presque éteinte, semblait venir d'un râle.<br>Elle semblait fondue dans l'ombre, un fantôme de tristesse,<br>Son corps recroquevillé, signe d'une longue attente.<br>« Bonjour, Madame la grenouille, dit Zillus, navré,<br>Je suis désolé d'avoir troublé votre repos.<br>Je ne savais pas qu'ici vous aviez élu votre nid. »<br>« Je ne dormais pas ! » répondit l'être affligé,<br>D'un ton las, atone, comme un écho des tombeaux.<br>Sa voix, à peine un murmure, portait le poids des jours,<br>Des nuits sans fin passées dans cette sombre geôle.<br>Elle était si faible, si frêle, qu'un souffle l'aurait brisée,<br>Le regard perdu, le corps tremblant, comme figée.<br>« Êtes-vous malade ? demanda le lézard, inquiet.<br>Je peux aller chercher de l'aide, si vous le souhaitez. »<br>« Non ! Personne ne vient ici, et je ne sortirai pas ! »<br>Lança la grenouille, l'angoisse dans la voix,<br>Une peur si profonde qu'elle enchaînait ses pas,<br>La clouant à l'obscur, plus sûre que des barreaux.</p>
+        </section>
 
-            <section id="rencontre-kochari">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">La Rencontre – Kochari, Prisonnière de l'Ombre</h3>
-                <p>Et là, dans la pénombre, il distingua une frêle silhouette.<br>C'était une grenouille, chétive, maigre et pâle,<br>Ses yeux, deux perles ternes, reflétaient une détresse<br>Dont la voix, presque éteinte, semblait venir d'un râle.<br>Elle semblait fondue dans l'ombre, un fantôme de tristesse,<br>Son corps recroquevillé, signe d'une longue attente.<br>« Bonjour, Madame la grenouille, dit Zillus, navré,<br>Je suis désolé d'avoir troublé votre repos.<br>Je ne savais pas qu'ici vous aviez élu votre nid. »<br>« Je ne dormais pas ! » répondit l'être affligé,<br>D'un ton las, atone, comme un écho des tombeaux.<br>Sa voix, à peine un murmure, portait le poids des jours,<br>Des nuits sans fin passées dans cette sombre geôle.<br>Elle était si faible, si frêle, qu'un souffle l'aurait brisée,<br>Le regard perdu, le corps tremblant, comme figée.<br>« Êtes-vous malade ? demanda le lézard, inquiet.<br>Je peux aller chercher de l'aide, si vous le souhaitez. »<br>« Non ! Personne ne vient ici, et je ne sortirai pas ! »<br>Lança la grenouille, l'angoisse dans la voix,<br>Une peur si profonde qu'elle enchaînait ses pas,<br>La clouant à l'obscur, plus sûre que des barreaux.</p>
-            </section>
+        <section id="recit-terreur" class="mb-8">
+            <h2>Le Récit de la Terreur – L'Ombre du Vison</h2>
+            <p>« D'accord, dit Zillus, je voulais juste offrir mon aide. »<br>« Merci, mais non ! » La réponse était un refus,<br>Un mur invisible dressé par la souffrance,<br>Par les souvenirs vifs, jamais disparus.<br>« Moi, c'est Zillus. Je jouais à cache-cache avec mon frère,<br>Et je suis tombé sur ce trou, ma nouvelle tanière.<br>Le pauvre Kaijane doit être las de me chercher. »<br>(Zillus, un instant, pensa à l'ennui de son frère,<br>Ignorant que Kaijane, sentant une étrangeté,<br>Prolongeait sa patrouille, l'esprit à l'affût, alerte.)<br>« Ton frère patrouille seul dehors ? » demanda la voix,<br>Une lueur d'inquiétude perçant son désespoir.<br>« Oui, il me cherche, sans savoir où je me cache, »<br>Dit Zillus en ricanant, sans malice ni tracas,<br>Encore inconscient du poids de ses paroles.<br>« Ce n'est pas drôle, petit insouciant ! » reprit la grenouille,<br>Sa voix, un peu plus forte, chargée d'une amère leçon.<br>« Vous n'avez conscience des dangers qui rôdent.<br>Tu devrais retrouver ton frère, avant que la nuit ne rouille<br>Vos jeux, et que le malheur ne vous démode. »<br>« Dangers ? Quels dangers ? Cette tourbière est notre jeu !<br>Le seul péril connu, c'est la colère de Maman,<br>Si nous rentrons tard, sous le regard de Dieu. »<br>Zillus, dans son innocence, ne voyait que la surface,<br>Ignorant les abîmes que la vie peut creuser.<br>« Et ce vison sanguinaire, qui dévora mes parents,<br>Et me pourchassa tel un démon assoiffé,<br>Si ce n'est par chance que je tombai dans ce trou,<br>Il m'aurait dévorée, sans pitié, sans regret. »<br>La grenouille frissonna, revivant l'horreur passée,<br>Le souvenir du prédateur, de la fuite éperdue.<br>Ses yeux se révulsaient, la terreur la saisissait,<br>Comme si l'ombre du vison encore la hantait,<br>Chaque détail gravé dans sa mémoire blessée.</p>
+        </section>
 
-            <section id="recit-terreur">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">Le Récit de la Terreur – L'Ombre du Vison</h3>
-                <p>« D'accord, dit Zillus, je voulais juste offrir mon aide. »<br>« Merci, mais non ! » La réponse était un refus,<br>Un mur invisible dressé par la souffrance,<br>Par les souvenirs vifs, jamais disparus.<br>« Moi, c'est Zillus. Je jouais à cache-cache avec mon frère,<br>Et je suis tombé sur ce trou, ma nouvelle tanière.<br>Le pauvre Kaijane doit être las de me chercher. »<br>(Zillus, un instant, pensa à l'ennui de son frère,<br>Ignorant que Kaijane, sentant une étrangeté,<br>Prolongeait sa patrouille, l'esprit à l'affût, alerte.)<br>« Ton frère patrouille seul dehors ? » demanda la voix,<br>Une lueur d'inquiétude perçant son désespoir.<br>« Oui, il me cherche, sans savoir où je me cache, »<br>Dit Zillus en ricanant, sans malice ni tracas,<br>Encore inconscient du poids de ses paroles.<br>« Ce n'est pas drôle, petit insouciant ! » reprit la grenouille,<br>Sa voix, un peu plus forte, chargée d'une amère leçon.<br>« Vous n'avez conscience des dangers qui rôdent.<br>Tu devrais retrouver ton frère, avant que la nuit ne rouille<br>Vos jeux, et que le malheur ne vous démode. »<br>« Dangers ? Quels dangers ? Cette tourbière est notre jeu !<br>Le seul péril connu, c'est la colère de Maman,<br>Si nous rentrons tard, sous le regard de Dieu. »<br>Zillus, dans son innocence, ne voyait que la surface,<br>Ignorant les abîmes que la vie peut creuser.<br>« Et ce vison sanguinaire, qui dévora mes parents,<br>Et me pourchassa tel un démon assoiffé,<br>Si ce n'est par chance que je tombai dans ce trou,<br>Il m'aurait dévorée, sans pitié, sans regret. »<br>La grenouille frissonna, revivant l'horreur passée,<br>Le souvenir du prédateur, de la fuite éperdue.<br>Ses yeux se révulsaient, la terreur la saisissait,<br>Comme si l'ombre du vison encore la hantait,<br>Chaque détail gravé dans sa mémoire blessée.</p>
-            </section>
+        <section id="graine-courage" class="mb-8">
+            <h2>La Graine du Courage – Une Lumière dans le Dialogue</h2>
+            <p>« Je n'ai jamais vu de vison ici, » dit Zillus, étonné,<br>Son insouciance se fissurant face à tant de douleur.<br>« Si la rumeur courait, Maman nous interdirait de sortir.<br>Depuis combien de temps n'avez-vous pas mangé ? »<br>« Depuis cette nuit maudite où je perdis ma famille,<br>Et que je tombai ici... cela fait plusieurs jours. »<br>Sa voix se perdit, le corps secoué de faiblesse.<br>« Vous devriez sortir, vous sustenter, sans faillir,<br>Sinon votre corps, hélas, vous lâchera sans retour. »<br>« Ce n'est pas possible, je n'ai ni le courage,<br>Ni l'assurance qu'il faut pour quitter cet endroit. »<br>Kochari baissa la tête, résignée à son sort,<br>Convaincue que le monde extérieur était la mort.<br>« Pourtant, » insista Zillus, une idée naissant en lui,<br>Se souvenant de la peur qui l'avait glacé en entrant,<br>Et de la force étrange qui l'avait rendu confiant.<br>« Et si vous aviez le courage, l'assurance, le présage,<br>Que se passerait-il alors, là-bas, sous le grand toit ? »<br>« Je serais dehors, respirant l'air frais et me nourrissant. »<br>« Comment vous sentiriez-vous ? »<br>« Vivante ! Et libérée ! J'en profiterais pour faire le deuil. »<br>Les mots résonnaient, porteurs d'une promesse lointaine.<br>« Et si vous demandiez à cette "Vivante et Libérée"<br>De vous prêter le courage, l'assurance, le recueil,<br>Nécessaires pour la rejoindre dehors, sans entrave ? »<br>« Simplement ? Comme ça ? » La grenouille hésita,<br>Un mince espoir perçant enfin son désespoir.<br>Elle sentit une étincelle, infime, mais réelle,<br>Le souvenir de sa propre vigueur juvénile.<br>« Il suffit d'y croire. Moi, j'ai eu peur tout à l'heure,<br>Quand j'ai entendu votre soupir profond dans l'obscur.<br>Mais j'ai fait appel au Zillus brave en mon cœur,<br>Qui m'a donné le courage d'approcher ce mur.<br>Et c'est là que je vous ai aperçue, dans la nuit. »</p>
+        </section>
 
-            <section id="graine-courage">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">La Graine du Courage – Une Lumière dans le Dialogue</h3>
-                <p>« Je n'ai jamais vu de vison ici, » dit Zillus, étonné,<br>Son insouciance se fissurant face à tant de douleur.<br>« Si la rumeur courait, Maman nous interdirait de sortir.<br>Depuis combien de temps n'avez-vous pas mangé ? »<br>« Depuis cette nuit maudite où je perdis ma famille,<br>Et que je tombai ici... cela fait plusieurs jours. »<br>Sa voix se perdit, le corps secoué de faiblesse.<br>« Vous devriez sortir, vous sustenter, sans faillir,<br>Sinon votre corps, hélas, vous lâchera sans retour. »<br>« Ce n'est pas possible, je n'ai ni le courage,<br>Ni l'assurance qu'il faut pour quitter cet endroit. »<br>Kochari baissa la tête, résignée à son sort,<br>Convaincue que le monde extérieur était la mort.<br>« Pourtant, » insista Zillus, une idée naissant en lui,<br>Se souvenant de la peur qui l'avait glacé en entrant,<br>Et de la force étrange qui l'avait rendu confiant.<br>« Et si vous aviez le courage, l'assurance, le présage,<br>Que se passerait-il alors, là-bas, sous le grand toit ? »<br>« Je serais dehors, respirant l'air frais et me nourrissant. »<br>« Comment vous sentiriez-vous ? »<br>« Vivante ! Et libérée ! J'en profiterais pour faire le deuil. »<br>Les mots résonnaient, porteurs d'une promesse lointaine.<br>« Et si vous demandiez à cette "Vivante et Libérée"<br>De vous prêter le courage, l'assurance, le recueil,<br>Nécessaires pour la rejoindre dehors, sans entrave ? »<br>« Simplement ? Comme ça ? » La grenouille hésita,<br>Un mince espoir perçant enfin son désespoir.<br>Elle sentit une étincelle, infime, mais réelle,<br>Le souvenir de sa propre vigueur juvénile.<br>« Il suffit d'y croire. Moi, j'ai eu peur tout à l'heure,<br>Quand j'ai entendu votre soupir profond dans l'obscur.<br>Mais j'ai fait appel au Zillus brave en mon cœur,<br>Qui m'a donné le courage d'approcher ce mur.<br>Et c'est là que je vous ai aperçue, dans la nuit. »</p>
-            </section>
+        <section id="premier-pas" class="mb-8">
+            <h2>Le Premier Pas – L'Éveil à la Lumière</h2>
+            <p>« Je vois ! Je vais faire ça moi aussi, » dit la grenouille, les yeux clos,<br>Concentrant toute sa volonté sur cette vision future.<br>Un frisson d'énergie la traversa, ténu mais doux,<br>Comme une force oubliée, renaissant du repos.<br>« Je m'appelle Kochari ! » lança-t-elle à Zillus, éblouie,<br>Un nom prononcé comme une première victoire.<br>« Je suis heureux de vous avoir rencontrée, Kochari. »<br>« Oui, je suis heureuse aussi. Pouvez-vous me prendre la main,<br>Et m'accompagner jusqu'à la sortie, sans détour ? »<br>« Avec joie ! » répondit Zillus, ami et souverain,<br>Son cœur de lézard, jadis malicieux, empli de compassion.<br>Pas à pas, la petite grenouille, guidée par la patte de Zillus,<br>Quitta l'antre sombre qui fut sa prison.<br>Chaque millimètre parcouru était une victoire,<br>Une reconquête sur l'angoisse et l'illusion.<br>L'air se fit plus doux, la lumière plus forte,<br>Jusqu'à ce que le soleil, enfin, la réchauffe.<br>Une fois dehors, Kochari respira à plein poumons,<br>Un grand sourire se dessina sur ses lèvres fines.<br>L'air frais, la lumière, chassaient les sombres démons,<br>Et la vie en son corps retrouvait ses racines.<br>Le poids des jours passés, de la peur et du chagrin,<br>S'envola comme une brume sous le soleil levant.<br>Elle se sentait légère, enfin libre de son destin,<br>Grâce à la main tendue d'un ami bienveillant.<br>Chaque brin d'herbe, chaque rayon de soleil,<br>Lui semblait un miracle, un don inespéré.<br>Ses muscles, engourdis, retrouvaient leur éveil,<br>Et la faim, aiguisée, la poussait à avancer.<br>Elle se dressa, une flamme nouvelle en son regard,<br>Et le monde extérieur, jadis terrifiant,<br>Lui parut un jardin, vibrant et réconfortant.</p>
+        </section>
 
-            <section id="premier-pas">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">Le Premier Pas – L'Éveil à la Lumière</h3>
-                <p>« Je vois ! Je vais faire ça moi aussi, » dit la grenouille, les yeux clos,<br>Concentrant toute sa volonté sur cette vision future.<br>Un frisson d'énergie la traversa, ténu mais doux,<br>Comme une force oubliée, renaissant du repos.<br>« Je m'appelle Kochari ! » lança-t-elle à Zillus, éblouie,<br>Un nom prononcé comme une première victoire.<br>« Je suis heureux de vous avoir rencontrée, Kochari. »<br>« Oui, je suis heureuse aussi. Pouvez-vous me prendre la main,<br>Et m'accompagner jusqu'à la sortie, sans détour ? »<br>« Avec joie ! » répondit Zillus, ami et souverain,<br>Son cœur de lézard, jadis malicieux, empli de compassion.<br>Pas à pas, la petite grenouille, guidée par la patte de Zillus,<br>Quitta l'antre sombre qui fut sa prison.<br>Chaque millimètre parcouru était une victoire,<br>Une reconquête sur l'angoisse et l'illusion.<br>L'air se fit plus doux, la lumière plus forte,<br>Jusqu'à ce que le soleil, enfin, la réchauffe.<br>Une fois dehors, Kochari respira à plein poumons,<br>Un grand sourire se dessina sur ses lèvres fines.<br>L'air frais, la lumière, chassaient les sombres démons,<br>Et la vie en son corps retrouvait ses racines.<br>Le poids des jours passés, de la peur et du chagrin,<br>S'envola comme une brume sous le soleil levant.<br>Elle se sentait légère, enfin libre de son destin,<br>Grâce à la main tendue d'un ami bienveillant.<br>Chaque brin d'herbe, chaque rayon de soleil,<br>Lui semblait un miracle, un don inespéré.<br>Ses muscles, engourdis, retrouvaient leur éveil,<br>Et la faim, aiguisée, la poussait à avancer.<br>Elle se dressa, une flamme nouvelle en son regard,<br>Et le monde extérieur, jadis terrifiant,<br>Lui parut un jardin, vibrant et réconfortant.</p>
-            </section>
+        <section id="revelation-kaijane" class="mb-8">
+            <h2>La Révélation de Kaijane – La Vérité Dissipe la Peur</h2>
+            <p>Quelques instants plus tard, Kaijane apparut,<br>Son pas plus lourd qu'à l'ordinaire, son regard inquiet,<br>Il avait senti que l'air portait une inquiétude,<br>Et la longue absence de Zillus le troublait.<br>« Ah ! C'est donc là que tu te cachais, petit chenapan ! »<br>S'écria-t-il, soulagé de retrouver son frère.<br>« Kaijane, je te présente ma nouvelle amie, Kochari.<br>Elle était cachée aussi, dans ce trou, mais depuis bien plus longtemps. »<br>« Pourquoi se cachait-elle dans ce trou ? » demanda Kaijane, curieux.<br>« Un gros méchant vison a dévoré ses parents,<br>Et la pourchassait pour la manger elle aussi. »<br>« C'est sûrement Trald le glouton, » dit Kaijane, pensif,<br>Son regard, plus âgé, portait la sagesse des récits.<br>« Père m'a souvent conté, » dit-il, la voix sereine,<br>« Que ce vison n'a pas fait long feu dans ces landes.<br>La même nuit qu'il est arrivé, une nuit d'onde pleine,<br>Il fut emporté dans les cieux, par la Dame Blanche.<br>Cette force éthérée, aux griffes acérées,<br>Qui nettoie nos forêts des bêtes malfaisantes.<br>Sous son emprise, nul n'échappe à son pouvoir,<br>Une chance pour nous qu'elle n'ait appétit<br>Que pour les gros rongeurs, et non pour nos petits. »<br>Une grosse larme coula sur la joue de Kochari,<br>Non pas de tristesse, mais d'un immense soulagement.<br>Un soupir profond, enfin libéré, la purifia.<br>La vérité, enfin, avait dissipé l'effroi,<br>Le monstre n'était plus, sa prison s'écroula.<br>Le passé, bien que douloureux, n'était plus une menace présente.<br>Elle pouvait enfin commencer son deuil, libre et sereine.</p>
+        </section>
 
-            <section id="revelation-kaijane">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">La Révélation de Kaijane – La Vérité Dissipe la Peur</h3>
-                <p>Quelques instants plus tard, Kaijane apparut,<br>Son pas plus lourd qu'à l'ordinaire, son regard inquiet,<br>Il avait senti que l'air portait une inquiétude,<br>Et la longue absence de Zillus le troublait.<br>« Ah ! C'est donc là que tu te cachais, petit chenapan ! »<br>S'écria-t-il, soulagé de retrouver son frère.<br>« Kaijane, je te présente ma nouvelle amie, Kochari.<br>Elle était cachée aussi, dans ce trou, mais depuis bien plus longtemps. »<br>« Pourquoi se cachait-elle dans ce trou ? » demanda Kaijane, curieux.<br>« Un gros méchant vison a dévoré ses parents,<br>Et la pourchassait pour la manger elle aussi. »<br>« C'est sûrement Trald le glouton, » dit Kaijane, pensif,<br>Son regard, plus âgé, portait la sagesse des récits.<br>« Père m'a souvent conté, » dit-il, la voix sereine,<br>« Que ce vison n'a pas fait long feu dans ces landes.<br>La même nuit qu'il est arrivé, une nuit d'onde pleine,<br>Il fut emporté dans les cieux, par la Dame Blanche.<br>Cette force éthérée, aux griffes acérées,<br>Qui nettoie nos forêts des bêtes malfaisantes.<br>Sous son emprise, nul n'échappe à son pouvoir,<br>Une chance pour nous qu'elle n'ait appétit<br>Que pour les gros rongeurs, et non pour nos petits. »<br>Une grosse larme coula sur la joue de Kochari,<br>Non pas de tristesse, mais d'un immense soulagement.<br>Un soupir profond, enfin libéré, la purifia.<br>La vérité, enfin, avait dissipé l'effroi,<br>Le monstre n'était plus, sa prison s'écroula.<br>Le passé, bien que douloureux, n'était plus une menace présente.<br>Elle pouvait enfin commencer son deuil, libre et sereine.</p>
-            </section>
+        <section id="renaissance" class="mb-8">
+            <h2>La Renaissance – Jeux de Lumière et d'Amitié</h2>
+            <p>Et depuis ce temps, une rumeur court, légère,<br>Non loin de Glendalough, dans les monts d'Irlande.<br>On pouvait apercevoir une petite grenouille altière,<br>En compagnie de deux lézards, jouant dans la lande.<br>Certains même jureraient qu'ils les ont vus rire,<br>Jouant à cache-cache, sous le soleil d'été.<br>Kochari, libérée, avait retrouvé le désir<br>De vivre, de s'épanouir, d'aimer, de partager.<br>Elle n'était plus l'ombre du trou, mais une lumière,<br>Témoin vivant du pouvoir de la compassion,<br>Et de la force intérieure qui, même dans la misère,<br>Peut briser les chaînes de l'illusion.<br>Leurs jeux résonnaient dans la tourbière,<br>Un hymne à l'amitié, à la vie retrouvée,<br>Prouvant que le plus grand des dangers, parfois,<br>N'est pas ce qui rôde, mais ce qui nous ronge en soi.<br>Leurs rires clairs portaient loin dans la vallée,<br>Comme un chant nouveau, une mélodie apaisée.<br>Kochari, forte et joyeuse, retrouvait ses couleurs,<br>Et Zillus, plus sage, mesurait sa valeur.<br>Kaijane, enfin rassuré, veillait sur ses amis,<br>Porteur de la sagesse, gardien des récits.<br>Leurs jeux n'étaient plus de simples divertissements,<br>Mais des célébrations de l'instant présent,<br>Des rappels constants que la peur, une fois vaincue,<br>Laisse place à la joie, à la vie revenue.</p>
+        </section>
 
-            <section id="renaissance">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">La Renaissance – Jeux de Lumière et d'Amitié</h3>
-                <p>Et depuis ce temps, une rumeur court, légère,<br>Non loin de Glendalough, dans les monts d'Irlande.<br>On pouvait apercevoir une petite grenouille altière,<br>En compagnie de deux lézards, jouant dans la lande.<br>Certains même jureraient qu'ils les ont vus rire,<br>Jouant à cache-cache, sous le soleil d'été.<br>Kochari, libérée, avait retrouvé le désir<br>De vivre, de s'épanouir, d'aimer, de partager.<br>Elle n'était plus l'ombre du trou, mais une lumière,<br>Témoin vivant du pouvoir de la compassion,<br>Et de la force intérieure qui, même dans la misère,<br>Peut briser les chaînes de l'illusion.<br>Leurs jeux résonnaient dans la tourbière,<br>Un hymne à l'amitié, à la vie retrouvée,<br>Prouvant que le plus grand des dangers, parfois,<br>N'est pas ce qui rôde, mais ce qui nous ronge en soi.<br>Leurs rires clairs portaient loin dans la vallée,<br>Comme un chant nouveau, une mélodie apaisée.<br>Kochari, forte et joyeuse, retrouvait ses couleurs,<br>Et Zillus, plus sage, mesurait sa valeur.<br>Kaijane, enfin rassuré, veillait sur ses amis,<br>Porteur de la sagesse, gardien des récits.<br>Leurs jeux n'étaient plus de simples divertissements,<br>Mais des célébrations de l'instant présent,<br>Des rappels constants que la peur, une fois vaincue,<br>Laisse place à la joie, à la vie revenue.</p>
-            </section>
+        <section id="heritage-coeurs" class="mb-8">
+            <h2>L'Héritage des Cœurs – La Morale Éternelle</h2>
+            <p>Et c'est ainsi que ce récit s'achève, mais sa sagesse, elle, demeure.<br>Car, comme le murmurerait un ancien conteur :<br>« La peur est une prison, mais la compassion en est la clé.<br>La vérité délivre l'âme, et l'amitié la fait briller. »<br>Que chacun se souvienne de Kochari et Zillus,<br>De la force qui naît quand un cœur s'ouvre enfin.<br>Que l'entraide soit le phare, le guide lumineux,<br>Pour dissiper les ombres sur le long chemin.<br>Car la plus grande victoire n'est pas de vaincre un ennemi,<br>Mais de libérer un esprit, de guérir une âme,<br>Et de comprendre que la lumière est en nous, toujours,<br>Quand l'amitié éclaire nos plus sombres drames.</p>
+            <br>
+            <p class="text-center font-bold text-xl text-blue-800">
+                <br>
+                Ainsi s'achève ici notre conte des landes,<br>
+                Mais point ne s'achève sa leçon, j'en suis certain.<br>
+                Car comme un sage fabuliste aurait pu dire :<br>
+                « La peur est une ombre, la vérité la dissipe.<br>
+                Quand la main se tend, l'âme se libère,<br>
+                Et l'amitié révèle la lumière qui respire. »
+            </p>
+        </section>
 
-            <section id="heritage-coeurs">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">L'Héritage des Cœurs – La Morale Éternelle</h3>
-                <p>Et c'est ainsi que ce récit s'achève, mais sa sagesse, elle, demeure.<br>Car, comme le murmurerait un ancien conteur :<br>« La peur est une prison, mais la compassion en est la clé.<br>La vérité délivre l'âme, et l'amitié la fait briller. »<br>Que chacun se souvienne de Kochari et Zillus,<br>De la force qui naît quand un cœur s'ouvre enfin.<br>Que l'entraide soit le phare, le guide lumineux,<br>Pour dissiper les ombres sur le long chemin.<br>Car la plus grande victoire n'est pas de vaincre un ennemi,<br>Mais de libérer un esprit, de guérir une âme,<br>Et de comprendre que la lumière est en nous, toujours,<br>Quand l'amitié éclaire nos plus sombres drames.</p>
-            </section>
-        </article>
-
-        <footer class="text-center text-gray-500 text-sm mt-12 pt-6 border-t border-gray-200">
-            <p>&copy; 2024 Ingenium Flow. Tous droits réservés.</p>
-            <p><a href="#" class="hover:text-indigo-600">Mentions Légales</a> | <a href="#" class="hover:text-indigo-600">Politique de Confidentialité</a></p>
-        </footer>
     </div>
+
+    <footer class="bg-blue-800 dark:bg-blue-900 text-white text-center p-4 mt-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>&copy; 2024 Ingenium Flow. Tous droits réservés.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="/ingenium-flow-website/mentions-legales.html" class="hover:text-gray-300 text-sm">Mentions Légales</a>
+                <a href="/ingenium-flow-website/politique-confidentialite.html" class="hover:text-gray-300 text-sm">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
