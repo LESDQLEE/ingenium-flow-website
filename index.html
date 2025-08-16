@@ -565,31 +565,7 @@
 
     <div class="mobile-menu-overlay"></div>
 
-    <script>
-        const navToggle = document.getElementById('nav-toggle');
-        const navContent = document.getElementById('nav-content');
-        const body = document.body;
-        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-
-        navToggle.onclick = function() {
-            navContent.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        }
-
-        // Close menu when clicking outside (on overlay or main content wrapper)
-        mobileMenuOverlay.onclick = function() {
-            navContent.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-
-        // Close menu when a navigation link is clicked
-        navContent.querySelectorAll('a').forEach(link => {
-            link.onclick = function() {
-                navContent.classList.remove('active');
-                body.classList.remove('menu-open');
-            }
-        }
-    </script>
+    <script src="script.js" defer></script>
 
 </body>
 </html>
