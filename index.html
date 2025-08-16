@@ -11,6 +11,7 @@
     <style>
         :root {
             --color-primary: #0A1128; /* Dark Blue */
+
             --color-secondary: #001F54; /* Medium Blue */
             --color-accent: #034078;   /* Royal Blue */
             --color-text: #333;
@@ -30,6 +31,11 @@
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             color: var(--color-primary);
+        }
+
+        /* Specific heading color for sections other than the hero */
+        section:not(#accueil) h3 {
+            color: var(--color-accent);
         }
 
         .header-bg {
@@ -86,7 +92,7 @@
             height: 16px;
             border-radius: 50%;
             background-color: var(--color-accent);
-            border: 3px solid var(--color-light-bg);
+            border: 3px solid var(--color-light-bg);\n
         }
 
         .testimonial-card {
@@ -118,7 +124,7 @@
         /* Specific styles for icons/visual elements */
         .icon-large {
             font-size: 3rem;
-            color: var(--color-accent);
+            color: var(--color-orange-gold); /* Changed to orange-gold for icons */
             margin-bottom: 1rem;
         }
 
@@ -157,10 +163,56 @@
         /* Hidden for now as per design choice */
         #skillsRadarChart { display: none; }
 
+        /* Mobile Navigation Improvements */
+        @media (max-width: 1023px) { /* Apply these styles only on small screens */
+            #nav-content {
+                position: fixed;
+                top: 0;
+                right: 0; /* Start off-screen to the right */
+                width: 250px; /* Adjust width as needed */
+                height: 100%;
+                background-color: var(--color-primary); /* Dark blue background */
+                padding: 2rem;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+                transition: transform 0.3s ease-in-out;
+                transform: translateX(100%); /* Initially hidden */
+                z-index: 40; /* Below the fixed header */
+            }
+
+            #nav-content.active {
+                transform: translateX(0); /* Slide in */
+            }
+
+            #nav-content ul {
+                flex-direction: column;
+            }
+
+            #nav-content li {
+                margin-right: 0;
+                margin-bottom: 1rem; /* Add spacing between links */
+            }
+
+            #nav-content .nav-link {
+                color: var(--color-light-bg); /* Light text color */
+                padding: 0.5rem 0;
+                display: block; /* Make links block level */
+            }
+        }
+
     </style>
 </head>
 <body class="antialiased">
     <nav class="header-bg p-4 shadow-lg fixed w-full z-50">
+
+    </nav>
+
+    <div id="main-content-wrapper">
+    <section id="accueil" class="header-bg flex flex-col items-center justify-center min-h-screen text-center px-4 pt-24">
+        <h1 class="text-6xl md:text-8xl font-extrabold mb-6 leading-tight tracking-tight">
+            <span style="color: var(--color-orange-gold);">Au cœur de la</span> <span class="text-white opacity-80">Transformation.</span><br>
+            <span style="color: var(--color-orange-gold);">Architectes de</span> <span class="text-white opacity-80">votre Valeur.</span>
+        </h1>
+        <p class="text-2xl md:text-4xl font-semibold max-w-4xl mb-8 opacity-90 leading-relaxed text-white">
         <div class="container mx-auto flex items-center justify-between flex-wrap">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
                 <a href="#accueil" class="text-2xl font-bold nav-link tracking-wider">INGENIUM FLOW</a>
@@ -198,6 +250,7 @@
         </div>
     </nav>
 
+    <div id="main-content-wrapper">
     <section id="accueil" class="header-bg flex flex-col items-center justify-center min-h-screen text-center px-4 pt-24">
         <h1 class="text-6xl md:text-8xl font-extrabold mb-6 leading-tight tracking-tight">
             <span style="color: var(--color-orange-gold);">Au cœur de la</span> <span class="text-white opacity-80">Transformation.</span><br>
@@ -487,6 +540,7 @@
             </p>
         </div>
     </section>
+    </div>
 
     <footer class="bg-var(--color-primary) text-white py-8 text-center text-sm opacity-90">
         <div class="container mx-auto px-4">
@@ -500,9 +554,31 @@
         </div>
     </footer>
 
+    <div class="mobile-menu-overlay"></div>
+
     <script>
-        document.getElementById('nav-toggle').onclick = function(){
-            document.getElementById('nav-content').classList.toggle('hidden');
+        const navToggle = document.getElementById('nav-toggle');
+        const navContent = document.getElementById('nav-content');
+        const body = document.body;
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+
+        navToggle.onclick = function() {
+            navContent.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        // Close menu when clicking outside (on overlay or main content wrapper)
+        mobileMenuOverlay.onclick = function() {
+            navContent.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+
+        // Close menu when a navigation link is clicked
+        navContent.querySelectorAll('a').forEach(link => {
+            link.onclick = function() {
+                navContent.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
         }
     </script>
 
