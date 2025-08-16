@@ -6,10 +6,58 @@
     <title>Contact - Ingenium Flow</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="antialiased">
+    <nav class="header-bg p-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex items-center justify-between flex-wrap">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <a href="index.html#accueil" class="text-2xl font-bold nav-link tracking-wider">INGENIUM FLOW</a>
+            </div>
+            <div class="block lg:hidden">
+                <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-300 border-gray-400 hover:text-white hover:border-white">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v15z"/></svg>
+                </button>
+            </div>
+            <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
+                <ul class="list-reset lg:flex justify-end flex-1 items-center">
+                    <li class="mr-3">
+                        <a href="index.html#vision" class="nav-link text-lg inline-block py-2 px-4">Vision</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="index.html#demarche" class="nav-link text-lg inline-block py-2 px-4">Démarche</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="index.html#expertise" class="nav-link text-lg inline-block py-2 px-4">Expertises</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="index.html#impact" class="nav-link text-lg inline-block py-2 px-4">Impacts</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="index.html#equipe" class="nav-link text-lg inline-block py-2 px-4">Équipe</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="index.html#contact" class="nav-link text-lg inline-block py-2 px-4">Contact</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="articles.html" class="nav-link text-lg inline-block py-2 px-4">Articles & Écrits</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container mx-auto px-4 py-12">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-10">Contact</h1>
         <p class="text-center text-xl">Cette page est en cours de construction.</p>
     </div>
+    <footer class="bg-var(--color-primary) text-white py-8 text-center text-sm opacity-90">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Ingenium Flow. Tous droits réservés.</p>
+            <p class="mt-2">L'architecture de la Valeur. L'excellence orchestrée.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="https://www.linkedin.com/company/ingenium-flow" target="_blank" class="hover:text-var(--color-highlight) text-link">LinkedIn</a>
+                <a href="politique-confidentialite.html" class="hover:text-var(--color-highlight) text-link">Politique de confidentialité</a>
+                <a href="mentions-legales.html" class="hover:text-var(--color-highlight) text-link">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
