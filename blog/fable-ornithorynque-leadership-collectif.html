@@ -5,145 +5,198 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Ornithorynque qui dirigea un sous-marin : Fable sur le Leadership Collectif - Ingenium Flow</title>
     <meta name="description" content="Découvrez une fable moderne sur le leadership collectif, la vulnérabilité partagée et l'équilibre entre savoir, pouvoir et sagesse. Une lecture inspirante par Ingenium Flow.">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="icon" href="/ingenium-flow-website/assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <style>
-        /* Styles personnalisés pour la lecture et l'UX */
+        :root {
+            --color-primary: #0A1128; /* Dark Blue */
+            --color-secondary: #001F54; /* Medium Blue */
+            --color-accent: #034078;   /* Royal Blue */
+            --color-text: #333;
+            --color-light-bg: #F8F9FA; /* Off-White */
+            --color-border: #E0E0E0;
+            --color-highlight: #C5D8F0; /* Lighter Blue */
+            --color-orange-gold: #FFB347; /* Un orange doré doux pour le contraste */
+        }
+
         body {
             font-family: 'Open Sans', sans-serif;
-            color: #333;
-            line-height: 1.7; /* Légèrement plus d'interligne */
-            background-color: #f8f9fa; /* Couleur de fond légère */
+            background-color: var(--color-light-bg);
+            color: var(--color-text);
+            line-height: 1.6;
         }
+
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
-            color: #0A1128; /* Couleur primaire d'Ingenium Flow */
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
+            color: var(--color-primary);
         }
-        h1 { font-size: 2.8rem; text-align: center; color: #034078; } /* Royal Blue */
-        h2 { font-size: 2.2rem; border-bottom: 2px solid #034078; padding-bottom: 0.3em; margin-top: 2.5em; }
-        h3 { font-size: 1.8rem; color: #001F54; } /* Medium Blue */
-        p {
-            margin-bottom: 1em;
-            text-align: justify;
+
+        .header-bg {
+            background-color: var(--color-primary);
+            color: var(--color-light-bg);
         }
-        .container-fable {
-            max-width: 800px; /* Largeur optimale pour la lecture */
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: #ffffff;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border-radius: 8px;
+
+        .nav-link {
+            color: var(--color-light-bg);
+            transition: color 0.3s ease;
         }
-        .prelude, .morale-box {
-            background-color: #e0f2f7; /* Couleur douce pour encadrés */
-            border-left: 5px solid #034078;
-            padding: 1.5em;
-            margin-bottom: 2em;
-            font-style: italic;
-            border-radius: 4px;
+        .nav-link:hover {
+            color: var(--color-highlight);
         }
+
         .section-title {
+            color: var(--color-accent);
             text-align: center;
-            font-weight: 600;
-            color: #034078;
-            margin-top: 3em;
-            margin-bottom: 1.5em;
-        }
-        .quote-block {
-            font-style: italic;
-            background-color: #f0f8ff;
-            border-left: 3px solid #034078;
-            padding: 1em 1.5em;
-            margin: 1.5em 0;
-            quotes: "“" "”" "‘" "’"; /* Pour les guillemets stylisés si utilisés */
-        }
-        .quote-block p::before {
-            content: open-quote;
-            font-size: 2em;
-            line-height: 0.1em;
-            vertical-align: -0.4em;
-            margin-right: 0.15em;
-            color: #034078;
-        }
-        .quote-block p::after {
-            content: close-quote;
-            font-size: 2em;
-            line-height: 0.1em;
-            vertical-align: -0.4em;
-            margin-left: 0.15em;
-            color: #034078;
+            margin-bottom: 2.5rem;
         }
 
-        .author-note {
-            font-size: 0.9em;
-            color: #666;
-            text-align: center;
-            margin-top: 2em;
-            margin-bottom: 1em;
+        .cta-button {
+            background-color: var(--color-accent);
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        .table-of-contents {
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
-            padding: 1.5rem;
-            border-radius: 8px;
+        .cta-button:hover {
+            background-color: #02315E;
+            transform: translateY(-2px);
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
             margin-bottom: 2rem;
+            border-left: 2px solid var(--color-highlight);
         }
-        .table-of-contents h3 {
-            margin-top: 0;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 0.5rem;
-            font-size: 1.4rem;
-            color: #0A1128;
-        }
-        .table-of-contents ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .table-of-contents li {
-            margin-bottom: 0.5rem;
-        }
-        .table-of-contents a {
-            color: #034078;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .table-of-contents a:hover {
-            text-decoration: underline;
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--color-accent);
+            border: 3px solid var(--color-light-bg);
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.8rem; }
-            h3 { font-size: 1.5rem; }
-            .container-fable {
-                padding: 1rem;
-            }
+        .testimonial-card {
+            background-color: white;
+            border-top: 4px solid var(--color-accent);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 2rem;
+            border-radius: 0.5rem;
         }
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--color-text);
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-top: 1rem;
+        }
+        .testimonial-card .title {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .footer-bg {
+            background-color: var(--color-primary);
+            color: var(--color-light-bg);
+        }
+
+        /* Specific styles for icons/visual elements */
+        .icon-large {
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Custom underline effect for links in text */
+        .text-link {
+            position: relative;
+            text-decoration: none;
+            color: var(--color-accent);
+        }
+        .text-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--color-accent);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .text-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Adjustments for radar chart container - if keeping it */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Increased height for better visibility */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Hidden for now as per design choice */
+        #skillsRadarChart { display: none; }
+
     </style>
 </head>
-<body>
-    <header>
-        <nav class="bg-blue-800 dark:bg-blue-900 shadow-lg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
-                    <div class="flex">
-                        <div class="flex-shrink-0 flex items-center">
-                            <a href="/ingenium-flow-website/" class="text-white text-2xl font-bold">Ingenium Flow</a>
-                        </div>
-                        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                            <a href="/ingenium-flow-website/" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Accueil</a>
-                            <a href="/ingenium-flow-website/services.html" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
-                            <a href="/ingenium-flow-website/articles.html" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Articles & Écrits</a>
-                        </div>
-                    </div>
-                </div>
+<body class="antialiased">
+    <nav class="header-bg p-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex items-center justify-between flex-wrap">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <a href="../index.html#accueil" class="text-2xl font-bold nav-link tracking-wider">INGENIUM FLOW</a>
             </div>
-        </nav>
-    </header>
+            <div class="block lg:hidden">
+                <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-300 border-gray-400 hover:text-white hover:border-white">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v15z"/></svg>
+                </button>
+            </div>
+            <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
+                <ul class="list-reset lg:flex justify-end flex-1 items-center">
+                    <li class="mr-3">
+                        <a href="../index.html#vision" class="nav-link text-lg inline-block py-2 px-4">Vision</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="../index.html#demarche" class="nav-link text-lg inline-block py-2 px-4">Démarche</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="../index.html#expertise" class="nav-link text-lg inline-block py-2 px-4">Expertises</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="../index.html#impact" class="nav-link text-lg inline-block py-2 px-4">Impacts</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="../index.html#equipe" class="nav-link text-lg inline-block py-2 px-4">Équipe</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="../index.html#contact" class="nav-link text-lg inline-block py-2 px-4">Contact</a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="../articles.html" class="nav-link text-lg inline-block py-2 px-4">Articles & Écrits</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container-fable mt-8 mb-8">
 
@@ -764,12 +817,14 @@
 
     </div>
 
-    <footer class="bg-blue-800 dark:bg-blue-900 text-white text-center p-4 mt-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p>&copy; 2024 Ingenium Flow. Tous droits réservés.</p>
-            <div class="flex justify-center space-x-4 mt-2">
-                <a href="/ingenium-flow-website/mentions-legales.html" class="hover:text-gray-300 text-sm">Mentions Légales</a>
-                <a href="/ingenium-flow-website/politique-confidentialite.html" class="hover:text-gray-300 text-sm">Politique de Confidentialité</a>
+    <footer class="bg-var(--color-primary) text-white py-8 text-center text-sm opacity-90">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Ingenium Flow. Tous droits réservés.</p>
+            <p class="mt-2">L'architecture de la Valeur. L'excellence orchestrée.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="https://www.linkedin.com/company/ingenium-flow" target="_blank" class="hover:text-var(--color-highlight) text-link">LinkedIn</a>
+                <a href="../politique-confidentialite.html" class="hover:text-var(--color-highlight) text-link">Politique de confidentialité</a>
+                <a href="../mentions-legales.html" class="hover:text-var(--color-highlight) text-link">Mentions légales</a>
             </div>
         </div>
     </footer>
